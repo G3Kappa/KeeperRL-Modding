@@ -1,222 +1,4 @@
-"PUSH_TO_STACK" inherit "GROUND_TORCH"
-{
-  name = "push to stack"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Push()
-    Message "Pushed"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"POP_FROM_STACK" inherit "GROUND_TORCH" 
-{ 
-  name = "pop from stack"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Pop()
-    Message "Popped"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_0" inherit "GROUND_TORCH" 
-{ 
-  name = "write 0"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    X0()
-    Message "Wrote 0 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"STACK_INDEX" inherit "GROUND_TORCH" 
-{ 
-  name = "write stack index"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    StackIndex()
-    Message "Wrote stack index to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_1" inherit "GROUND_TORCH" 
-{ 
-  name = "write 1"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    X1()
-    Message "Wrote 1 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"ADD" inherit "GROUND_TORCH" 
-{ 
-  name = "add"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Add()
-    Message "Added 2 items"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"PRINT" inherit "GROUND_TORCH" 
-{ 
-  name = "print"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Print()
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}"ELEC_SOURCE" {
-  name = "redstone torch"
-  viewId = { "torch" }
-  canBuildOutsideOfTerritory = true
-}
-
-"WIRE" {
-  name = "wire"
-  viewId = { "wire" }
-  canBuildOutsideOfTerritory = true
-  tickType = Effect AnyNeighbor(ActivePowerSource(), PlaceFurniture "WIRE_LIVING", {})
-}
-
-"WIRE_LIVING" inherit "WIRE" {
-  name = "wire (living)"
-  tickType = Effect AnyNeighbor(ActivePowerSource(),  PlaceFurniture "WIRE_LIVE", PlaceFurniture "WIRE")
-}
-
-"WIRE_LIVE" inherit "WIRE" {
-  name = "wire (live)"
-  viewId = { "wire_live" }
-  tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "WIRE_DYING")
-}
-
-"WIRE_DYING" inherit "WIRE_LIVE" {
-  name = "wire (dying)"
-  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "WIRE_LIVE", PlaceFurniture "WIRE")
-}
-
-"POISON_GAS_TRAP_WIRED"
-{
-  name = "poison gas trap (wired)"
-  viewId = { "trap"  Rgb 58 156 68 255 }
-  tickType = Effect AnyNeighbor(PassivePowerSource(), EmitPoisonGas 0.2, {})
-  canBuildOutsideOfTerritory = true
-}
-
-"FIRE_TRAP_WIRED"
-{
-  name = "fire trap (wired)"
-  viewId = { "trap" ColorId ORANGE }
-  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "FIRE_WALL", {})
-  canBuildOutsideOfTerritory = true
-}
-
-"PRESSURE_PLATE_NEUTRAL_INERT"
-{
-  name = "pressure plate (neutral)"
-  viewId = { "pressure_plate" }
-  tickType = Effect Filter Health 0 100 PlaceFurniture "PRESSURE_PLATE_NEUTRAL_ACTIVE"
-  canBuildOutsideOfTerritory = true
-}
-"PRESSURE_PLATE_NEUTRAL_ACTIVE" inherit "PRESSURE_PLATE_NEUTRAL_INERT" 
-{ 
-  tickType = Effect Filter Not Health 0 100 PlaceFurniture "PRESSURE_PLATE_NEUTRAL_INERT"
-}
-
-"LEVER_OFF"
-{
-  name = "lever (off)"
-  viewId = { "lever_off" }
-  usageType = UsageEffect "pull" PlaceFurniture "LEVER_ON"
-  canBuildOutsideOfTerritory = true
-}
-"LEVER_ON" inherit "LEVER_OFF" 
-{ 
-  name = "lever (on)"
-  viewId = { "lever_on" }
-  usageType = UsageEffect "pull" PlaceFurniture "LEVER_OFF"
-}
-
-"NOT_GATE_OFF"
-{
-  name = "NOT gate (off)"
-  viewId = { "not_gate" }
-  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "NOT_GATE_ON", {})
-  canBuildOutsideOfTerritory = true
-}
-"NOT_GATE_ON" inherit "NOT_GATE_OFF" 
-{ 
-  name = "NOT gate (on)"
-  viewId = { "not_gate" }
-  tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "NOT_GATE_OFF")
-}
-
-"ELECTRIC_DOOR" inherit "IRON_DOOR"
-{
-  name = "electric door"
-  viewId = { "electric_door" }
-  clickType = none
-  requiredSupport = { { { E W } } { { N S } {"electric_door"} } }
-  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "ELECTRIC_DOOR_LOCKED", {})
-  destroyFX = { DESTROY_FURNITURE Rgb 255 120 120 255 }
-}
-"ELECTRIC_DOOR_LOCKED" inherit "ELECTRIC_DOOR" 
-{ 
-  name = "electric door (locked)"
-  viewId = { "electric_door_locked" }
-  requiredSupport = { { { E W } } { { N S } {"electric_door_locked"} } }
-  blockMovement = true
-  tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "ELECTRIC_DOOR")
-}
-Def CardinalNeighbors(Cont)
-  Chain { 
-    SetFlag "1" false SetFlag "2" false SetFlag "3" false SetFlag "4" false
-    Area 1 Chain {
-      BinaryCounter("1", "2", "3", "4", "Carry")
-      FirstSuccessful { 
-        Filter And { Not Flag "1" Not Flag "2" Flag "3" Not Flag "4" } Cont
-        Filter And { Not Flag "1" Flag "2" Not Flag "3" Not Flag "4" } Cont
-        Filter And { Not Flag "1" Flag "2" Flag "3" Not Flag "4" } Cont
-        Filter And { Not Flag "1" Not Flag "2" Not Flag "3" Flag "4" } Cont
-      }
-    }
-  }
-End
-
-Def ActivePowerSource()
-  Or { 
-    FurnitureType "ELEC_SOURCE" 
-    FurnitureType "PRESSURE_PLATE_NEUTRAL_ACTIVE" 
-    FurnitureType "LEVER_ON" 
-    FurnitureType "NOT_GATE_OFF" 
-    FurnitureType "WIRE_LIVE" 
-  }
-End
-
-Def PassivePowerSource()
-  Or { 
-    ActivePowerSource()
-    FurnitureType "WIRE_LIVING" 
-  }
-End
-
-Def AnyNeighbor(Predicate, Match, Fail)
-  Chain {
-    SetFlag "__match_any" false
-    CardinalNeighbors(Filter And { Predicate Not Flag "__match_any" } { SetFlag "__match_any" true })
-    FirstSuccessful { 
-      Filter Flag "__match_any" Match
-      Filter Not Flag "__match_any" Fail
-    }
-  }
-EndDef Copy(A, B)
+Def Copy(A, B)
   FirstSuccessful {
     Filter Is1(A) Write1(B)
     Filter Is0(A) Write0(B)
@@ -547,4 +329,79 @@ Def Pop(Copy0, Copy1, Copy2, Copy3)
     Copy("bit2", Copy2)
     Copy("bit3", Copy3)
   }
-End
+End"PUSH_TO_STACK" inherit "GROUND_TORCH"
+{
+  name = "push to stack"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Push()
+    Message "Pushed"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"POP_FROM_STACK" inherit "GROUND_TORCH" 
+{ 
+  name = "pop from stack"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Pop()
+    Message "Popped"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"WRITE_0" inherit "GROUND_TORCH" 
+{ 
+  name = "write 0"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    X0()
+    Message "Wrote 0 to active memory"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"STACK_INDEX" inherit "GROUND_TORCH" 
+{ 
+  name = "write stack index"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    StackIndex()
+    Message "Wrote stack index to active memory"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"WRITE_1" inherit "GROUND_TORCH" 
+{ 
+  name = "write 1"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    X1()
+    Message "Wrote 1 to active memory"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"ADD" inherit "GROUND_TORCH" 
+{ 
+  name = "add"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Add()
+    Message "Added 2 items"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"PRINT" inherit "GROUND_TORCH" 
+{ 
+  name = "print"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Print()
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
