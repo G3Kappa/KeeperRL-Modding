@@ -1,9 +1,7 @@
-Def Cmp(Lt, Lte, Eq, Gte, Gt)
+Def Cmp(Lt, Eq, Gt)
   Chain {
     Write0(Lt)
-    Write0(Lte)
     Write0(Eq)
-    Write0(Gte)
     Write0(Gt)
     Pop("A0", "A1", "A2", "A3")
     Pop("B0", "B1", "B2", "B3")
