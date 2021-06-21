@@ -1,0 +1,42 @@
+Def Cmp(Lt, Lte, Eq, Gte, Gt)
+  Chain {
+    Write0(Lt)
+    Write0(Lte)
+    Write0(Eq)
+    Write0(Gte)
+    Write0(Gt)
+    Pop("A0", "A1", "A2", "A3")
+    Pop("B0", "B1", "B2", "B3")
+    IfElse(EqBits("A3", "B3"),
+        IfElse(EqBits("A2", "B2"),
+            IfElse(EqBits("A1", "B1"),
+                IfElse(EqBits("A0", "B0"),
+                    Write1(Eq),
+                    IfElse(LtBits("A0", "B0"),
+                        Write1(Lt),
+                        Write1(Gt),
+                    ),
+                IfElse(LtBits("A1", "B1"),
+                    Write1(Lt),
+                    Write0(Gt)),
+            IfElse(LtBits("A2", "B2"),
+                Write1(Lt),
+                Write0(Gt)),
+        IfElse(LtBits("A3", "B3"),
+            Write1(Lt),
+            Write0(Gt))
+  }
+End
+
+Def Add()
+  Chain {
+    Write0("0")
+    Pop("A0", "A1", "A2", "A3")
+    Pop("B0", "B1", "B2", "B3")
+    AddBits("A0", "B0",  "0", "bit0", "C1")
+    AddBits("A1", "B1", "C1", "bit1", "C2")
+    AddBits("A2", "B2", "C2", "bit2", "C3")
+    AddBits("A3", "B3", "C3", "bit3", "C4")
+    Push()
+  }
+End

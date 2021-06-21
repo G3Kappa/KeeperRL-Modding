@@ -1,0 +1,10 @@
+Def If(Cond, BodyIf)
+    Filter Cond BodyIf
+End
+
+Def IfElse(Cond, BodyIf, BodyElse)
+    FirstSuccessful {
+        If(BodyIf)
+        BodyElse
+    }
+End

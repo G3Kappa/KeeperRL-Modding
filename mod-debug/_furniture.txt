@@ -1,0 +1,76 @@
+"PUSH_TO_STACK" inherit "GROUND_TORCH"
+{
+  name = "push to stack"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Push()
+    Message "Pushed"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"POP_FROM_STACK" inherit "GROUND_TORCH" 
+{ 
+  name = "pop from stack"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Pop()
+    Message "Popped"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"WRITE_0" inherit "GROUND_TORCH" 
+{ 
+  name = "write 0"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    X0()
+    Message "Wrote 0 to active memory"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"STACK_INDEX" inherit "GROUND_TORCH" 
+{ 
+  name = "write stack index"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    StackIndex()
+    Message "Wrote stack index to active memory"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"WRITE_1" inherit "GROUND_TORCH" 
+{ 
+  name = "write 1"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    X1()
+    Message "Wrote 1 to active memory"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"ADD" inherit "GROUND_TORCH" 
+{ 
+  name = "add"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Add()
+    Message "Added 2 items"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"PRINT" inherit "GROUND_TORCH" 
+{ 
+  name = "print"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Print()
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}

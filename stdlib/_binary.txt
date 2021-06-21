@@ -1,0 +1,145 @@
+Def Copy(A, B)
+  FirstSuccessful {
+    Filter Is1(A) Write1(B)
+    Filter Is0(A) Write0(B)
+  }
+End
+
+Def Is0(X)
+  Not Flag X
+End
+
+Def Is1(X)
+  Flag X
+End
+
+Def Write0(X)
+  SetFlag X false
+End
+
+Def Write1(X)
+  SetFlag X true
+End
+
+Def EqBits(A, B)
+  Or { And { Is0(A) Is0(B) } And { Is1(A) Is1(B) } }
+End
+
+Def GteBits(A, B)
+  Is1(A)
+End
+
+Def GtBits(A, B)
+  And { Is1(A) Is0(B) }
+End
+
+Def LteBits(A, B)
+  Is0(A)
+End
+
+Def LtBits(A, B)
+  And { Is0(A) Is1(B) }
+End
+
+Def BinaryCounterSegmentUp(A, B, Cont)
+  FirstSuccessful {
+    Filter Is0(A) { Write1(A) }
+    Filter Is1(A) Chain { 
+      Write0(A)
+      FirstSuccessful { 
+        Filter Is0(B) { Write1(B) }
+        Filter Is1(B) Chain { 
+          Write0(B)
+          Cont
+          Write0(B)
+          Write0(A)
+        }
+      }
+    }
+  }
+End
+
+Def BinaryCounterSegmentDown(A, B, Cont)
+  FirstSuccessful {
+    Filter     Flag A { SetFlag A false }
+    Filter Not Flag A Chain { 
+      SetFlag A true 
+      FirstSuccessful {
+        Filter     Flag B { SetFlag B false  }
+        Filter Not Flag B Chain { 
+          SetFlag B true
+          Cont
+        }
+      }
+    }
+  }
+End
+
+Def Increment(Bit0, Bit1, Bit2, Bit3, CarryFlag)
+  Chain {
+    Write0(CarryFlag)
+    BinaryCounterSegmentUp(Bit0, Bit1, BinaryCounterSegmentUp(Bit2, Bit3, Write1(CarryFlag)))
+  }
+End
+
+Def Decrement(Bit0, Bit1, Bit2, Bit3, CarryFlag)
+  Chain {
+    Write0(CarryFlag)
+    BinaryCounterSegmentDown(Bit0, Bit1, BinaryCounterSegmentDown(Bit2, Bit3, Write1(CarryFlag)))
+  }
+End
+
+Def AddBits(A, B, C, S, Carry)
+  Chain {
+    Write0(S)
+    Write0(Carry)
+    FirstSuccessful {
+      Filter And { Is0(A) Is0(B) Is0(C) } {}
+      Filter And { Is1(A) Is0(B) Is0(C) } Write1(S)
+      Filter And { Is0(A) Is1(B) Is0(C) } Write1(S)
+      Filter And { Is0(A) Is0(B) Is1(C) } Write1(S)
+      Filter And { Is1(A) Is1(B) Is0(C) } Write1(Carry)
+      Filter And { Is0(A) Is1(B) Is1(C) } Write1(Carry)
+      Filter And { Is1(A) Is0(B) Is1(C) } Write1(Carry)
+      Filter And { Is1(A) Is1(B) Is1(C) } Chain { Write1(Carry) Write1(S) }
+    }
+  }
+End
+
+Def Multiplex(Bit0, Bit1, Bit2, Bit3, M0, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15)
+  FirstSuccessful {
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) } M15
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) } M14
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) } M13
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) } M12
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) } M11
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) } M10
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) } M9
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) } M8
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) } M7
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) } M6
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) } M5
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) } M4
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) } M3
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) } M2
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) } M1
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) } M0
+  }
+End
+
+Def X0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") } End
+Def X1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") } End
+Def X2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") } End
+Def X3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") } End
+Def X4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") } End
+Def X5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") } End
+Def X6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") } End
+Def X7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") } End
+Def X8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") } End
+Def X9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") } End
+Def XA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } End
+Def XB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } End
+Def XC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
+Def XD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
+Def XE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End
+Def XF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End

@@ -1,0 +1,92 @@
+Def StackIndex()
+  Chain {
+    Copy("_stack0", "bit0")
+    Copy("_stack1", "bit1")
+    Copy("_stack2", "bit2")
+    Copy("_stack3", "bit3")
+  }
+End
+
+Def Push()
+  Chain {
+    FirstSuccessful {
+      Chain {
+        Multiplex("_stack0", "_stack1", "_stack2", "_stack3",
+          { Copy("bit0", "_slot00") Copy("bit1", "_slot01") Copy("bit2", "_slot02") Copy("bit3", "_slot03") },
+          { Copy("bit0", "_slot10") Copy("bit1", "_slot11") Copy("bit2", "_slot12") Copy("bit3", "_slot13") },
+          { Copy("bit0", "_slot20") Copy("bit1", "_slot21") Copy("bit2", "_slot22") Copy("bit3", "_slot23") },
+          { Copy("bit0", "_slot30") Copy("bit1", "_slot31") Copy("bit2", "_slot32") Copy("bit3", "_slot33") },
+          { Copy("bit0", "_slot40") Copy("bit1", "_slot41") Copy("bit2", "_slot42") Copy("bit3", "_slot43") },
+          { Copy("bit0", "_slot50") Copy("bit1", "_slot51") Copy("bit2", "_slot52") Copy("bit3", "_slot53") },
+          { Copy("bit0", "_slot60") Copy("bit1", "_slot61") Copy("bit2", "_slot62") Copy("bit3", "_slot63") },
+          { Copy("bit0", "_slot70") Copy("bit1", "_slot71") Copy("bit2", "_slot72") Copy("bit3", "_slot73") },
+          { Copy("bit0", "_slot80") Copy("bit1", "_slot81") Copy("bit2", "_slot82") Copy("bit3", "_slot83") },
+          { Copy("bit0", "_slot90") Copy("bit1", "_slot91") Copy("bit2", "_slot92") Copy("bit3", "_slot93") },
+          { Copy("bit0", "_slotA0") Copy("bit1", "_slotA1") Copy("bit2", "_slotA2") Copy("bit3", "_slotA3") },
+          { Copy("bit0", "_slotB0") Copy("bit1", "_slotB1") Copy("bit2", "_slotB2") Copy("bit3", "_slotB3") },
+          { Copy("bit0", "_slotC0") Copy("bit1", "_slotC1") Copy("bit2", "_slotC2") Copy("bit3", "_slotC3") },
+          { Copy("bit0", "_slotD0") Copy("bit1", "_slotD1") Copy("bit2", "_slotD2") Copy("bit3", "_slotD3") },
+          { Copy("bit0", "_slotE0") Copy("bit1", "_slotE1") Copy("bit2", "_slotE2") Copy("bit3", "_slotE3") },
+          { Copy("bit0", "_slotF0") Copy("bit1", "_slotF1") Copy("bit2", "_slotF2") Copy("bit3", "_slotF3") }
+        )
+        Increment("_stack0", "_stack1", "_stack2", "_stack3", "_stack_overflow")
+        Filter Is1("_stack_overflow") Chain {
+          Message "stack overflow"
+          WriteErrorStackOverflow()
+        }
+      }
+    }
+  }
+End
+
+Def Push(Copy0, Copy1, Copy2, Copy3)
+  Chain {
+    Copy(Copy0, "bit0")
+    Copy(Copy1, "bit1")
+    Copy(Copy2, "bit2")
+    Copy(Copy3, "bit3")
+    Push()
+  }
+End
+
+Def Pop()
+  Chain {
+    FirstSuccessful {
+      Chain {
+        Decrement("_stack0", "_stack1", "_stack2", "_stack3", "_stack_underflow")
+        Filter Is1("_stack_underflow") Chain {
+          Message "stack underflow"
+          WriteErrorStackUnderflow()
+        }
+        Multiplex("_stack0", "_stack1", "_stack2", "_stack3",
+            { Copy("_slot00", "bit0") Copy("_slot01", "bit1") Copy("_slot02", "bit2") Copy("_slot03", "bit3") },
+            { Copy("_slot10", "bit0") Copy("_slot11", "bit1") Copy("_slot12", "bit2") Copy("_slot13", "bit3") },
+            { Copy("_slot20", "bit0") Copy("_slot21", "bit1") Copy("_slot22", "bit2") Copy("_slot23", "bit3") },
+            { Copy("_slot30", "bit0") Copy("_slot31", "bit1") Copy("_slot32", "bit2") Copy("_slot33", "bit3") },
+            { Copy("_slot40", "bit0") Copy("_slot41", "bit1") Copy("_slot42", "bit2") Copy("_slot43", "bit3") },
+            { Copy("_slot50", "bit0") Copy("_slot51", "bit1") Copy("_slot52", "bit2") Copy("_slot53", "bit3") },
+            { Copy("_slot60", "bit0") Copy("_slot61", "bit1") Copy("_slot62", "bit2") Copy("_slot63", "bit3") },
+            { Copy("_slot70", "bit0") Copy("_slot71", "bit1") Copy("_slot72", "bit2") Copy("_slot73", "bit3") },
+            { Copy("_slot80", "bit0") Copy("_slot81", "bit1") Copy("_slot82", "bit2") Copy("_slot83", "bit3") },
+            { Copy("_slot90", "bit0") Copy("_slot91", "bit1") Copy("_slot92", "bit2") Copy("_slot93", "bit3") },
+            { Copy("_slotA0", "bit0") Copy("_slotA1", "bit1") Copy("_slotA2", "bit2") Copy("_slotA3", "bit3") },
+            { Copy("_slotB0", "bit0") Copy("_slotB1", "bit1") Copy("_slotB2", "bit2") Copy("_slotB3", "bit3") },
+            { Copy("_slotC0", "bit0") Copy("_slotC1", "bit1") Copy("_slotC2", "bit2") Copy("_slotC3", "bit3") },
+            { Copy("_slotD0", "bit0") Copy("_slotD1", "bit1") Copy("_slotD2", "bit2") Copy("_slotD3", "bit3") },
+            { Copy("_slotE0", "bit0") Copy("_slotE1", "bit1") Copy("_slotE2", "bit2") Copy("_slotE3", "bit3") },
+            { Copy("_slotF0", "bit0") Copy("_slotF1", "bit1") Copy("_slotF2", "bit2") Copy("_slotF3", "bit3") }
+          )
+      }
+    }
+  }
+End
+
+Def Pop(Copy0, Copy1, Copy2, Copy3)
+  Chain {
+    Pop()
+    Copy("bit0", Copy0)
+    Copy("bit1", Copy1)
+    Copy("bit2", Copy2)
+    Copy("bit3", Copy3)
+  }
+End

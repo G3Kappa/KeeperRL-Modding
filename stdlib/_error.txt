@@ -1,0 +1,29 @@
+Def Error()
+  Or { Is1("_error0") Is1("_error1") Is1("_error2") Is1("_error3") }
+End
+
+Def WriteError()
+  Chain {
+    Copy("_error0", "bit0")
+    Copy("_error1", "bit1")
+    Copy("_error2", "bit2")
+    Copy("_error3", "bit3")
+  }
+End
+
+Def ClearError()
+  Chain {
+    Write0("_error0")
+    Write0("_error1")
+    Write0("_error2")
+    Write0("_error3")
+  }
+End
+
+Def WriteErrorStackOverflow()
+  Chain { X1() WriteError() }
+End
+
+Def WriteErrorStackUnderflow()
+  Chain { X2() WriteError() }
+End

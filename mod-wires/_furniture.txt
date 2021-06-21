@@ -1,0 +1,102 @@
+"ELEC_SOURCE" {
+  name = "redstone torch"
+  viewId = { "torch" }
+  canBuildOutsideOfTerritory = true
+}
+
+"WIRE" {
+  name = "wire"
+  viewId = { "wire" }
+  canBuildOutsideOfTerritory = true
+  tickType = Effect AnyNeighbor(ActivePowerSource(), PlaceFurniture "WIRE_LIVING", {})
+}
+
+"WIRE_LIVING" inherit "WIRE" {
+  name = "wire (living)"
+  tickType = Effect AnyNeighbor(ActivePowerSource(),  PlaceFurniture "WIRE_LIVE", PlaceFurniture "WIRE")
+}
+
+"WIRE_LIVE" inherit "WIRE" {
+  name = "wire (live)"
+  viewId = { "wire_live" }
+  tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "WIRE_DYING")
+}
+
+"WIRE_DYING" inherit "WIRE_LIVE" {
+  name = "wire (dying)"
+  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "WIRE_LIVE", PlaceFurniture "WIRE")
+}
+
+"POISON_GAS_TRAP_WIRED"
+{
+  name = "poison gas trap (wired)"
+  viewId = { "trap"  Rgb 58 156 68 255 }
+  tickType = Effect AnyNeighbor(PassivePowerSource(), EmitPoisonGas 0.2, {})
+  canBuildOutsideOfTerritory = true
+}
+
+"FIRE_TRAP_WIRED"
+{
+  name = "fire trap (wired)"
+  viewId = { "trap" ColorId ORANGE }
+  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "FIRE_WALL", {})
+  canBuildOutsideOfTerritory = true
+}
+
+"PRESSURE_PLATE_NEUTRAL_INERT"
+{
+  name = "pressure plate (neutral)"
+  viewId = { "pressure_plate" }
+  tickType = Effect Filter Health 0 100 PlaceFurniture "PRESSURE_PLATE_NEUTRAL_ACTIVE"
+  canBuildOutsideOfTerritory = true
+}
+"PRESSURE_PLATE_NEUTRAL_ACTIVE" inherit "PRESSURE_PLATE_NEUTRAL_INERT" 
+{ 
+  tickType = Effect Filter Not Health 0 100 PlaceFurniture "PRESSURE_PLATE_NEUTRAL_INERT"
+}
+
+"LEVER_OFF"
+{
+  name = "lever (off)"
+  viewId = { "lever_off" }
+  usageType = UsageEffect "pull" PlaceFurniture "LEVER_ON"
+  canBuildOutsideOfTerritory = true
+}
+"LEVER_ON" inherit "LEVER_OFF" 
+{ 
+  name = "lever (on)"
+  viewId = { "lever_on" }
+  usageType = UsageEffect "pull" PlaceFurniture "LEVER_OFF"
+}
+
+"NOT_GATE_OFF"
+{
+  name = "NOT gate (off)"
+  viewId = { "not_gate" }
+  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "NOT_GATE_ON", {})
+  canBuildOutsideOfTerritory = true
+}
+"NOT_GATE_ON" inherit "NOT_GATE_OFF" 
+{ 
+  name = "NOT gate (on)"
+  viewId = { "not_gate" }
+  tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "NOT_GATE_OFF")
+}
+
+"ELECTRIC_DOOR" inherit "IRON_DOOR"
+{
+  name = "electric door"
+  viewId = { "electric_door" }
+  clickType = none
+  requiredSupport = { { { E W } } { { N S } {"electric_door"} } }
+  tickType = Effect AnyNeighbor(PassivePowerSource(), PlaceFurniture "ELECTRIC_DOOR_LOCKED", {})
+  destroyFX = { DESTROY_FURNITURE Rgb 255 120 120 255 }
+}
+"ELECTRIC_DOOR_LOCKED" inherit "ELECTRIC_DOOR" 
+{ 
+  name = "electric door (locked)"
+  viewId = { "electric_door_locked" }
+  requiredSupport = { { { E W } } { { N S } {"electric_door_locked"} } }
+  blockMovement = true
+  tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "ELECTRIC_DOOR")
+}

@@ -1,0 +1,43 @@
+
+Def CardinalNeighbors(Cont)
+  Chain { 
+    SetFlag "1" false SetFlag "2" false SetFlag "3" false SetFlag "4" false
+    Area 1 Chain {
+      BinaryCounter("1", "2", "3", "4", "Carry")
+      FirstSuccessful { 
+        Filter And { Not Flag "1" Not Flag "2" Flag "3" Not Flag "4" } Cont
+        Filter And { Not Flag "1" Flag "2" Not Flag "3" Not Flag "4" } Cont
+        Filter And { Not Flag "1" Flag "2" Flag "3" Not Flag "4" } Cont
+        Filter And { Not Flag "1" Not Flag "2" Not Flag "3" Flag "4" } Cont
+      }
+    }
+  }
+End
+
+Def ActivePowerSource()
+  Or { 
+    FurnitureType "ELEC_SOURCE" 
+    FurnitureType "PRESSURE_PLATE_NEUTRAL_ACTIVE" 
+    FurnitureType "LEVER_ON" 
+    FurnitureType "NOT_GATE_OFF" 
+    FurnitureType "WIRE_LIVE" 
+  }
+End
+
+Def PassivePowerSource()
+  Or { 
+    ActivePowerSource()
+    FurnitureType "WIRE_LIVING" 
+  }
+End
+
+Def AnyNeighbor(Predicate, Match, Fail)
+  Chain {
+    SetFlag "__match_any" false
+    CardinalNeighbors(Filter And { Predicate Not Flag "__match_any" } { SetFlag "__match_any" true })
+    FirstSuccessful { 
+      Filter Flag "__match_any" Match
+      Filter Not Flag "__match_any" Fail
+    }
+  }
+End

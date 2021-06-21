@@ -1,8 +1,0 @@
-Def StackIndex()
-  Chain {
-    Copy("_stack0", "bit0")
-    Copy("_stack1", "bit1")
-    Copy("_stack2", "bit2")
-    Copy("_stack3", "bit3")
-  }
-End

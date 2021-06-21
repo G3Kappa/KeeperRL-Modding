@@ -1,3 +1,3 @@
 #! /bin/sh
 
-ls -d _* | xargs cat > furniture.obj
+ls -ld $(find .) | grep -oh \./.*/_.*\.txt | xargs cat > furniture.txt

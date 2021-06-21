@@ -1,345 +1,79 @@
-Def Copy(A, B)
-  FirstSuccessful {
-    Filter Is1(A) Write1(B)
-    Filter Is0(A) Write0(B)
-  }
-End
-
-Def Is0(X)
-  Not Flag X
-End
-
-Def Is1(X)
-  Flag X
-End
-
-Def Eq(A, B)
-  Or { And { Is0(A) Is0(B) } And { Is1(A) Is1(B) } }
-End
-
-Def Write0(X)
-  SetFlag X false
-End
-
-Def Write1(X)
-  SetFlag X true
-End
-
-Def BinaryCounterSegment(A, B, Cont)
-  FirstSuccessful {
-    Filter Is0(A) { Write1(A) }
-    Filter Is1(A) Chain { 
-      Write0(A)
-      FirstSuccessful { 
-        Filter Is0(B) { Write1(B) }
-        Filter Is1(B) Chain { 
-          Write0(B)
-          Cont
-          Write0(B)
-          Write0(A)
-        }
-      }
-    }
-  }
-End
-
-Def BinaryCounter(Bit0, Bit1, Bit2, Bit3, CarryFlag)
-  Chain {
-    Write0(CarryFlag)
-    BinaryCounterSegment(Bit0, Bit1, BinaryCounterSegment(Bit2, Bit3, Write1(CarryFlag)))
-  }
-End
-
-Def BinaryCounterSegmentDown(A, B, Cont)
-  FirstSuccessful {
-    Filter     Flag A { SetFlag A false }
-    Filter Not Flag A Chain { 
-      SetFlag A true 
-      FirstSuccessful {
-        Filter     Flag B { SetFlag B false  }
-        Filter Not Flag B Chain { 
-          SetFlag B true
-          Cont
-        }
-      }
-    }
-  }
-End
-
-Def BinaryCounterDown(Bit0, Bit1, Bit2, Bit3, CarryFlag)
-  Chain {
-    Write0(CarryFlag)
-    BinaryCounterSegmentDown(Bit0, Bit1, BinaryCounterSegmentDown(Bit2, Bit3, Write1(CarryFlag)))
-  }
-End
-
-Def Error()
-  Or { Is1("_error0") Is1("_error1") Is1("_error2") Is1("_error3") }
-End
-
-
-Def StackIndex()
-  Chain {
-    Copy("_stack0", "bit0")
-    Copy("_stack1", "bit1")
-    Copy("_stack2", "bit2")
-    Copy("_stack3", "bit3")
-  }
-End
-
-Def WriteError()
-  Chain {
-    Copy("_error0", "bit0")
-    Copy("_error1", "bit1")
-    Copy("_error2", "bit2")
-    Copy("_error3", "bit3")
-  }
-End
-
-Def ClearError()
-  Chain {
-    Write0("_error0")
-    Write0("_error1")
-    Write0("_error2")
-    Write0("_error3")
-  }
-End
-
-Def WriteErrorStackOverflow()
-  Chain { X1() WriteError() }
-End
-
-Def WriteErrorStackUnderflow()
-  Chain { X2() WriteError() }
-End
-
-Def Multiplex(Bit0, Bit1, Bit2, Bit3, M0, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15)
-  FirstSuccessful {
-    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) } M15
-    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) } M14
-    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) } M13
-    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) } M12
-    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) } M11
-    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) } M10
-    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) } M9
-    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) } M8
-    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) } M7
-    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) } M6
-    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) } M5
-    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) } M4
-    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) } M3
-    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) } M2
-    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) } M1
-    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) } M0
-  }
-End
-
-Def Push()
-  Chain {
-    FirstSuccessful {
-      Chain {
-        Multiplex("_stack0", "_stack1", "_stack2", "_stack3",
-          { Copy("bit0", "_slot00") Copy("bit1", "_slot01") Copy("bit2", "_slot02") Copy("bit3", "_slot03") },
-          { Copy("bit0", "_slot10") Copy("bit1", "_slot11") Copy("bit2", "_slot12") Copy("bit3", "_slot13") },
-          { Copy("bit0", "_slot20") Copy("bit1", "_slot21") Copy("bit2", "_slot22") Copy("bit3", "_slot23") },
-          { Copy("bit0", "_slot30") Copy("bit1", "_slot31") Copy("bit2", "_slot32") Copy("bit3", "_slot33") },
-          { Copy("bit0", "_slot40") Copy("bit1", "_slot41") Copy("bit2", "_slot42") Copy("bit3", "_slot43") },
-          { Copy("bit0", "_slot50") Copy("bit1", "_slot51") Copy("bit2", "_slot52") Copy("bit3", "_slot53") },
-          { Copy("bit0", "_slot60") Copy("bit1", "_slot61") Copy("bit2", "_slot62") Copy("bit3", "_slot63") },
-          { Copy("bit0", "_slot70") Copy("bit1", "_slot71") Copy("bit2", "_slot72") Copy("bit3", "_slot73") },
-          { Copy("bit0", "_slot80") Copy("bit1", "_slot81") Copy("bit2", "_slot82") Copy("bit3", "_slot83") },
-          { Copy("bit0", "_slot90") Copy("bit1", "_slot91") Copy("bit2", "_slot92") Copy("bit3", "_slot93") },
-          { Copy("bit0", "_slotA0") Copy("bit1", "_slotA1") Copy("bit2", "_slotA2") Copy("bit3", "_slotA3") },
-          { Copy("bit0", "_slotB0") Copy("bit1", "_slotB1") Copy("bit2", "_slotB2") Copy("bit3", "_slotB3") },
-          { Copy("bit0", "_slotC0") Copy("bit1", "_slotC1") Copy("bit2", "_slotC2") Copy("bit3", "_slotC3") },
-          { Copy("bit0", "_slotD0") Copy("bit1", "_slotD1") Copy("bit2", "_slotD2") Copy("bit3", "_slotD3") },
-          { Copy("bit0", "_slotE0") Copy("bit1", "_slotE1") Copy("bit2", "_slotE2") Copy("bit3", "_slotE3") },
-          { Copy("bit0", "_slotF0") Copy("bit1", "_slotF1") Copy("bit2", "_slotF2") Copy("bit3", "_slotF3") }
-        )
-        BinaryCounter("_stack0", "_stack1", "_stack2", "_stack3", "_stack_overflow")
-        Filter Is1("_stack_overflow") Chain {
-          Message "stack overflow"
-          WriteErrorStackOverflow()
-        }
-      }
-    }
-  }
-End
-
-Def Push(Copy0, Copy1, Copy2, Copy3)
-  Chain {
-    Copy(Copy0, "bit0")
-    Copy(Copy1, "bit1")
-    Copy(Copy2, "bit2")
-    Copy(Copy3, "bit3")
+"PUSH_TO_STACK" inherit "GROUND_TORCH"
+{
+  name = "push to stack"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
     Push()
+    Message "Pushed"
   }
-End
-
-Def Pop()
-  Chain {
-    FirstSuccessful {
-      Chain {
-        BinaryCounterDown("_stack0", "_stack1", "_stack2", "_stack3", "_stack_underflow")
-        Filter Is1("_stack_underflow") Chain {
-          Message "stack underflow"
-          WriteErrorStackUnderflow()
-        }
-        Multiplex("_stack0", "_stack1", "_stack2", "_stack3",
-            { Copy("_slot00", "bit0") Copy("_slot01", "bit1") Copy("_slot02", "bit2") Copy("_slot03", "bit3") },
-            { Copy("_slot10", "bit0") Copy("_slot11", "bit1") Copy("_slot12", "bit2") Copy("_slot13", "bit3") },
-            { Copy("_slot20", "bit0") Copy("_slot21", "bit1") Copy("_slot22", "bit2") Copy("_slot23", "bit3") },
-            { Copy("_slot30", "bit0") Copy("_slot31", "bit1") Copy("_slot32", "bit2") Copy("_slot33", "bit3") },
-            { Copy("_slot40", "bit0") Copy("_slot41", "bit1") Copy("_slot42", "bit2") Copy("_slot43", "bit3") },
-            { Copy("_slot50", "bit0") Copy("_slot51", "bit1") Copy("_slot52", "bit2") Copy("_slot53", "bit3") },
-            { Copy("_slot60", "bit0") Copy("_slot61", "bit1") Copy("_slot62", "bit2") Copy("_slot63", "bit3") },
-            { Copy("_slot70", "bit0") Copy("_slot71", "bit1") Copy("_slot72", "bit2") Copy("_slot73", "bit3") },
-            { Copy("_slot80", "bit0") Copy("_slot81", "bit1") Copy("_slot82", "bit2") Copy("_slot83", "bit3") },
-            { Copy("_slot90", "bit0") Copy("_slot91", "bit1") Copy("_slot92", "bit2") Copy("_slot93", "bit3") },
-            { Copy("_slotA0", "bit0") Copy("_slotA1", "bit1") Copy("_slotA2", "bit2") Copy("_slotA3", "bit3") },
-            { Copy("_slotB0", "bit0") Copy("_slotB1", "bit1") Copy("_slotB2", "bit2") Copy("_slotB3", "bit3") },
-            { Copy("_slotC0", "bit0") Copy("_slotC1", "bit1") Copy("_slotC2", "bit2") Copy("_slotC3", "bit3") },
-            { Copy("_slotD0", "bit0") Copy("_slotD1", "bit1") Copy("_slotD2", "bit2") Copy("_slotD3", "bit3") },
-            { Copy("_slotE0", "bit0") Copy("_slotE1", "bit1") Copy("_slotE2", "bit2") Copy("_slotE3", "bit3") },
-            { Copy("_slotF0", "bit0") Copy("_slotF1", "bit1") Copy("_slotF2", "bit2") Copy("_slotF3", "bit3") }
-          )
-      }
-    }
-  }
-End
-
-Def Pop(Copy0, Copy1, Copy2, Copy3)
-  Chain {
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"POP_FROM_STACK" inherit "GROUND_TORCH" 
+{ 
+  name = "pop from stack"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
     Pop()
-    Copy("bit0", Copy0)
-    Copy("bit1", Copy1)
-    Copy("bit2", Copy2)
-    Copy("bit3", Copy3)
+    Message "Popped"
   }
-End
-
-Def X0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") } End
-Def X1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") } End
-Def X2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") } End
-Def X3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") } End
-Def X4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") } End
-Def X5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") } End
-Def X6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") } End
-Def X7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") } End
-Def X8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") } End
-Def X9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") } End
-Def XA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } End
-Def XB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } End
-Def XC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
-Def XD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
-Def XE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End
-Def XF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End
-
-Def Cmp(Equal)
-  Chain {
-    Pop("A0", "A1", "A2", "A3")
-    Pop("B0", "B1", "B2", "B3")
-    Write0(Equal)
-    Filter And { Eq("A0", "B0") Eq("A1", "B1") Eq("A2", "B2") Eq("A3", "B3") } {
-      Write1(Equal)
-    }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"WRITE_0" inherit "GROUND_TORCH" 
+{ 
+  name = "write 0"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    X0()
+    Message "Wrote 0 to active memory"
   }
-End
-
-Def AddX(A, B, C, S, Carry)
-  Chain {
-    Write0(S)
-    Write0(Carry)
-    FirstSuccessful {
-      Filter And { Is0(A) Is0(B) Is0(C) } {}
-      Filter And { Is1(A) Is0(B) Is0(C) } Write1(S)
-      Filter And { Is0(A) Is1(B) Is0(C) } Write1(S)
-      Filter And { Is0(A) Is0(B) Is1(C) } Write1(S)
-      Filter And { Is1(A) Is1(B) Is0(C) } Write1(Carry)
-      Filter And { Is0(A) Is1(B) Is1(C) } Write1(Carry)
-      Filter And { Is1(A) Is0(B) Is1(C) } Write1(Carry)
-      Filter And { Is1(A) Is1(B) Is1(C) } Chain { Write1(Carry) Write1(S) }
-    }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"STACK_INDEX" inherit "GROUND_TORCH" 
+{ 
+  name = "write stack index"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    StackIndex()
+    Message "Wrote stack index to active memory"
   }
-End
-
-Def Add()
-  Chain {
-    Write0("0")
-    Pop("A0", "A1", "A2", "A3")
-    Pop("B0", "B1", "B2", "B3")
-    AddX("A0", "B0",  "0", "bit0", "C1")
-    AddX("A1", "B1", "C1", "bit1", "C2")
-    AddX("A2", "B2", "C2", "bit2", "C3")
-    AddX("A3", "B3", "C3", "bit3", "C4")
-    Push()
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"WRITE_1" inherit "GROUND_TORCH" 
+{ 
+  name = "write 1"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    X1()
+    Message "Wrote 1 to active memory"
   }
-End
-
-Def Print()
-  Multiplex("bit0", "bit1", "bit2", "bit3", 
-    Message "0", 
-    Message "1", 
-    Message "2", 
-    Message "3", 
-    Message "4", 
-    Message "5", 
-    Message "6", 
-    Message "7", 
-    Message "8", 
-    Message "9", 
-    Message "10", 
-    Message "11", 
-    Message "12", 
-    Message "13", 
-    Message "14", 
-    Message "15")
-End
-
-Def CardinalNeighbors(Cont)
-  Chain { 
-    SetFlag "1" false SetFlag "2" false SetFlag "3" false SetFlag "4" false
-    Area 1 Chain {
-      BinaryCounter("1", "2", "3", "4", "Carry")
-      FirstSuccessful { 
-        Filter And { Not Flag "1" Not Flag "2" Flag "3" Not Flag "4" } Cont
-        Filter And { Not Flag "1" Flag "2" Not Flag "3" Not Flag "4" } Cont
-        Filter And { Not Flag "1" Flag "2" Flag "3" Not Flag "4" } Cont
-        Filter And { Not Flag "1" Not Flag "2" Not Flag "3" Flag "4" } Cont
-      }
-    }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"ADD" inherit "GROUND_TORCH" 
+{ 
+  name = "add"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Add()
+    Message "Added 2 items"
   }
-End
-
-Def ActivePowerSource()
-  Or { 
-    FurnitureType "ELEC_SOURCE" 
-    FurnitureType "PRESSURE_PLATE_NEUTRAL_ACTIVE" 
-    FurnitureType "LEVER_ON" 
-    FurnitureType "NOT_GATE_OFF" 
-    FurnitureType "WIRE_LIVE" 
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
+"PRINT" inherit "GROUND_TORCH" 
+{ 
+  name = "print"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Print()
   }
-End
-
-Def PassivePowerSource()
-  Or { 
-    ActivePowerSource()
-    FurnitureType "WIRE_LIVING" 
-  }
-End
-
-Def AnyNeighbor(Predicate, Match, Fail)
-  Chain {
-    SetFlag "__match_any" false
-    CardinalNeighbors(Filter And { Predicate Not Flag "__match_any" } { SetFlag "__match_any" true })
-    FirstSuccessful { 
-      Filter Flag "__match_any" Match
-      Filter Not Flag "__match_any" Fail
-    }
-  }
-End
-
-"ELEC_SOURCE" {
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}"ELEC_SOURCE" {
   name = "redstone torch"
   viewId = { "torch" }
   canBuildOutsideOfTerritory = true
@@ -423,82 +157,6 @@ End
   viewId = { "not_gate" }
   tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "NOT_GATE_OFF")
 }
-"PUSH_TO_STACK" inherit "GROUND_TORCH"
-{
-  name = "push to stack"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Push()
-    Message "Pushed"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"POP_FROM_STACK" inherit "GROUND_TORCH" 
-{ 
-  name = "pop from stack"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Pop()
-    Message "Popped"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_0" inherit "GROUND_TORCH" 
-{ 
-  name = "write 0"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    X0()
-    Message "Wrote 0 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"STACK_INDEX" inherit "GROUND_TORCH" 
-{ 
-  name = "write stack index"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    StackIndex()
-    Message "Wrote stack index to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_1" inherit "GROUND_TORCH" 
-{ 
-  name = "write 1"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    X1()
-    Message "Wrote 1 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"ADD" inherit "GROUND_TORCH" 
-{ 
-  name = "add"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Add()
-    Message "Added 2 items"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"PRINT" inherit "GROUND_TORCH" 
-{ 
-  name = "print"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Print()
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
 
 "ELECTRIC_DOOR" inherit "IRON_DOOR"
 {
@@ -517,3 +175,376 @@ End
   blockMovement = true
   tickType = Effect AnyNeighbor(PassivePowerSource(), {}, PlaceFurniture "ELECTRIC_DOOR")
 }
+Def CardinalNeighbors(Cont)
+  Chain { 
+    SetFlag "1" false SetFlag "2" false SetFlag "3" false SetFlag "4" false
+    Area 1 Chain {
+      BinaryCounter("1", "2", "3", "4", "Carry")
+      FirstSuccessful { 
+        Filter And { Not Flag "1" Not Flag "2" Flag "3" Not Flag "4" } Cont
+        Filter And { Not Flag "1" Flag "2" Not Flag "3" Not Flag "4" } Cont
+        Filter And { Not Flag "1" Flag "2" Flag "3" Not Flag "4" } Cont
+        Filter And { Not Flag "1" Not Flag "2" Not Flag "3" Flag "4" } Cont
+      }
+    }
+  }
+End
+
+Def ActivePowerSource()
+  Or { 
+    FurnitureType "ELEC_SOURCE" 
+    FurnitureType "PRESSURE_PLATE_NEUTRAL_ACTIVE" 
+    FurnitureType "LEVER_ON" 
+    FurnitureType "NOT_GATE_OFF" 
+    FurnitureType "WIRE_LIVE" 
+  }
+End
+
+Def PassivePowerSource()
+  Or { 
+    ActivePowerSource()
+    FurnitureType "WIRE_LIVING" 
+  }
+End
+
+Def AnyNeighbor(Predicate, Match, Fail)
+  Chain {
+    SetFlag "__match_any" false
+    CardinalNeighbors(Filter And { Predicate Not Flag "__match_any" } { SetFlag "__match_any" true })
+    FirstSuccessful { 
+      Filter Flag "__match_any" Match
+      Filter Not Flag "__match_any" Fail
+    }
+  }
+EndDef Copy(A, B)
+  FirstSuccessful {
+    Filter Is1(A) Write1(B)
+    Filter Is0(A) Write0(B)
+  }
+End
+
+Def Is0(X)
+  Not Flag X
+End
+
+Def Is1(X)
+  Flag X
+End
+
+Def Write0(X)
+  SetFlag X false
+End
+
+Def Write1(X)
+  SetFlag X true
+End
+
+Def EqBits(A, B)
+  Or { And { Is0(A) Is0(B) } And { Is1(A) Is1(B) } }
+End
+
+Def GteBits(A, B)
+  Is1(A)
+End
+
+Def GtBits(A, B)
+  And { Is1(A) Is0(B) }
+End
+
+Def LteBits(A, B)
+  Is0(A)
+End
+
+Def LtBits(A, B)
+  And { Is0(A) Is1(B) }
+End
+
+Def BinaryCounterSegmentUp(A, B, Cont)
+  FirstSuccessful {
+    Filter Is0(A) { Write1(A) }
+    Filter Is1(A) Chain { 
+      Write0(A)
+      FirstSuccessful { 
+        Filter Is0(B) { Write1(B) }
+        Filter Is1(B) Chain { 
+          Write0(B)
+          Cont
+          Write0(B)
+          Write0(A)
+        }
+      }
+    }
+  }
+End
+
+Def BinaryCounterSegmentDown(A, B, Cont)
+  FirstSuccessful {
+    Filter     Flag A { SetFlag A false }
+    Filter Not Flag A Chain { 
+      SetFlag A true 
+      FirstSuccessful {
+        Filter     Flag B { SetFlag B false  }
+        Filter Not Flag B Chain { 
+          SetFlag B true
+          Cont
+        }
+      }
+    }
+  }
+End
+
+Def Increment(Bit0, Bit1, Bit2, Bit3, CarryFlag)
+  Chain {
+    Write0(CarryFlag)
+    BinaryCounterSegmentUp(Bit0, Bit1, BinaryCounterSegmentUp(Bit2, Bit3, Write1(CarryFlag)))
+  }
+End
+
+Def Decrement(Bit0, Bit1, Bit2, Bit3, CarryFlag)
+  Chain {
+    Write0(CarryFlag)
+    BinaryCounterSegmentDown(Bit0, Bit1, BinaryCounterSegmentDown(Bit2, Bit3, Write1(CarryFlag)))
+  }
+End
+
+Def AddBits(A, B, C, S, Carry)
+  Chain {
+    Write0(S)
+    Write0(Carry)
+    FirstSuccessful {
+      Filter And { Is0(A) Is0(B) Is0(C) } {}
+      Filter And { Is1(A) Is0(B) Is0(C) } Write1(S)
+      Filter And { Is0(A) Is1(B) Is0(C) } Write1(S)
+      Filter And { Is0(A) Is0(B) Is1(C) } Write1(S)
+      Filter And { Is1(A) Is1(B) Is0(C) } Write1(Carry)
+      Filter And { Is0(A) Is1(B) Is1(C) } Write1(Carry)
+      Filter And { Is1(A) Is0(B) Is1(C) } Write1(Carry)
+      Filter And { Is1(A) Is1(B) Is1(C) } Chain { Write1(Carry) Write1(S) }
+    }
+  }
+End
+
+Def Multiplex(Bit0, Bit1, Bit2, Bit3, M0, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15)
+  FirstSuccessful {
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) } M15
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) } M14
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) } M13
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) } M12
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) } M11
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) } M10
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) } M9
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) } M8
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) } M7
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) } M6
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) } M5
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) } M4
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) } M3
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) } M2
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) } M1
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) } M0
+  }
+End
+
+Def X0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") } End
+Def X1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") } End
+Def X2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") } End
+Def X3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") } End
+Def X4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") } End
+Def X5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") } End
+Def X6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") } End
+Def X7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") } End
+Def X8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") } End
+Def X9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") } End
+Def XA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } End
+Def XB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } End
+Def XC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
+Def XD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
+Def XE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End
+Def XF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } EndDef Error()
+  Or { Is1("_error0") Is1("_error1") Is1("_error2") Is1("_error3") }
+End
+
+Def WriteError()
+  Chain {
+    Copy("_error0", "bit0")
+    Copy("_error1", "bit1")
+    Copy("_error2", "bit2")
+    Copy("_error3", "bit3")
+  }
+End
+
+Def ClearError()
+  Chain {
+    Write0("_error0")
+    Write0("_error1")
+    Write0("_error2")
+    Write0("_error3")
+  }
+End
+
+Def WriteErrorStackOverflow()
+  Chain { X1() WriteError() }
+End
+
+Def WriteErrorStackUnderflow()
+  Chain { X2() WriteError() }
+EndDef If(Cond, BodyIf)
+    Filter Cond BodyIf
+End
+
+Def IfElse(Cond, BodyIf, BodyElse)
+    FirstSuccessful {
+        If(BodyIf)
+        BodyElse
+    }
+EndDef Cmp(Lt, Lte, Eq, Gte, Gt)
+  Chain {
+    Write0(Lt)
+    Write0(Lte)
+    Write0(Eq)
+    Write0(Gte)
+    Write0(Gt)
+    Pop("A0", "A1", "A2", "A3")
+    Pop("B0", "B1", "B2", "B3")
+    IfElse(EqBits("A3", "B3"),
+        IfElse(EqBits("A2", "B2"),
+            IfElse(EqBits("A1", "B1"),
+                IfElse(EqBits("A0", "B0"),
+                    Write1(Eq),
+                    IfElse(LtBits("A0", "B0"),
+                        Write1(Lt),
+                        Write1(Gt),
+                    ),
+                IfElse(LtBits("A1", "B1"),
+                    Write1(Lt),
+                    Write0(Gt)),
+            IfElse(LtBits("A2", "B2"),
+                Write1(Lt),
+                Write0(Gt)),
+        IfElse(LtBits("A3", "B3"),
+            Write1(Lt),
+            Write0(Gt))
+  }
+End
+
+Def Add()
+  Chain {
+    Write0("0")
+    Pop("A0", "A1", "A2", "A3")
+    Pop("B0", "B1", "B2", "B3")
+    AddBits("A0", "B0",  "0", "bit0", "C1")
+    AddBits("A1", "B1", "C1", "bit1", "C2")
+    AddBits("A2", "B2", "C2", "bit2", "C3")
+    AddBits("A3", "B3", "C3", "bit3", "C4")
+    Push()
+  }
+EndDef Print()
+  Multiplex("bit0", "bit1", "bit2", "bit3", 
+    Message "0", 
+    Message "1", 
+    Message "2", 
+    Message "3", 
+    Message "4", 
+    Message "5", 
+    Message "6", 
+    Message "7", 
+    Message "8", 
+    Message "9", 
+    Message "10", 
+    Message "11", 
+    Message "12", 
+    Message "13", 
+    Message "14", 
+    Message "15")
+EndDef StackIndex()
+  Chain {
+    Copy("_stack0", "bit0")
+    Copy("_stack1", "bit1")
+    Copy("_stack2", "bit2")
+    Copy("_stack3", "bit3")
+  }
+End
+
+Def Push()
+  Chain {
+    FirstSuccessful {
+      Chain {
+        Multiplex("_stack0", "_stack1", "_stack2", "_stack3",
+          { Copy("bit0", "_slot00") Copy("bit1", "_slot01") Copy("bit2", "_slot02") Copy("bit3", "_slot03") },
+          { Copy("bit0", "_slot10") Copy("bit1", "_slot11") Copy("bit2", "_slot12") Copy("bit3", "_slot13") },
+          { Copy("bit0", "_slot20") Copy("bit1", "_slot21") Copy("bit2", "_slot22") Copy("bit3", "_slot23") },
+          { Copy("bit0", "_slot30") Copy("bit1", "_slot31") Copy("bit2", "_slot32") Copy("bit3", "_slot33") },
+          { Copy("bit0", "_slot40") Copy("bit1", "_slot41") Copy("bit2", "_slot42") Copy("bit3", "_slot43") },
+          { Copy("bit0", "_slot50") Copy("bit1", "_slot51") Copy("bit2", "_slot52") Copy("bit3", "_slot53") },
+          { Copy("bit0", "_slot60") Copy("bit1", "_slot61") Copy("bit2", "_slot62") Copy("bit3", "_slot63") },
+          { Copy("bit0", "_slot70") Copy("bit1", "_slot71") Copy("bit2", "_slot72") Copy("bit3", "_slot73") },
+          { Copy("bit0", "_slot80") Copy("bit1", "_slot81") Copy("bit2", "_slot82") Copy("bit3", "_slot83") },
+          { Copy("bit0", "_slot90") Copy("bit1", "_slot91") Copy("bit2", "_slot92") Copy("bit3", "_slot93") },
+          { Copy("bit0", "_slotA0") Copy("bit1", "_slotA1") Copy("bit2", "_slotA2") Copy("bit3", "_slotA3") },
+          { Copy("bit0", "_slotB0") Copy("bit1", "_slotB1") Copy("bit2", "_slotB2") Copy("bit3", "_slotB3") },
+          { Copy("bit0", "_slotC0") Copy("bit1", "_slotC1") Copy("bit2", "_slotC2") Copy("bit3", "_slotC3") },
+          { Copy("bit0", "_slotD0") Copy("bit1", "_slotD1") Copy("bit2", "_slotD2") Copy("bit3", "_slotD3") },
+          { Copy("bit0", "_slotE0") Copy("bit1", "_slotE1") Copy("bit2", "_slotE2") Copy("bit3", "_slotE3") },
+          { Copy("bit0", "_slotF0") Copy("bit1", "_slotF1") Copy("bit2", "_slotF2") Copy("bit3", "_slotF3") }
+        )
+        Increment("_stack0", "_stack1", "_stack2", "_stack3", "_stack_overflow")
+        Filter Is1("_stack_overflow") Chain {
+          Message "stack overflow"
+          WriteErrorStackOverflow()
+        }
+      }
+    }
+  }
+End
+
+Def Push(Copy0, Copy1, Copy2, Copy3)
+  Chain {
+    Copy(Copy0, "bit0")
+    Copy(Copy1, "bit1")
+    Copy(Copy2, "bit2")
+    Copy(Copy3, "bit3")
+    Push()
+  }
+End
+
+Def Pop()
+  Chain {
+    FirstSuccessful {
+      Chain {
+        Decrement("_stack0", "_stack1", "_stack2", "_stack3", "_stack_underflow")
+        Filter Is1("_stack_underflow") Chain {
+          Message "stack underflow"
+          WriteErrorStackUnderflow()
+        }
+        Multiplex("_stack0", "_stack1", "_stack2", "_stack3",
+            { Copy("_slot00", "bit0") Copy("_slot01", "bit1") Copy("_slot02", "bit2") Copy("_slot03", "bit3") },
+            { Copy("_slot10", "bit0") Copy("_slot11", "bit1") Copy("_slot12", "bit2") Copy("_slot13", "bit3") },
+            { Copy("_slot20", "bit0") Copy("_slot21", "bit1") Copy("_slot22", "bit2") Copy("_slot23", "bit3") },
+            { Copy("_slot30", "bit0") Copy("_slot31", "bit1") Copy("_slot32", "bit2") Copy("_slot33", "bit3") },
+            { Copy("_slot40", "bit0") Copy("_slot41", "bit1") Copy("_slot42", "bit2") Copy("_slot43", "bit3") },
+            { Copy("_slot50", "bit0") Copy("_slot51", "bit1") Copy("_slot52", "bit2") Copy("_slot53", "bit3") },
+            { Copy("_slot60", "bit0") Copy("_slot61", "bit1") Copy("_slot62", "bit2") Copy("_slot63", "bit3") },
+            { Copy("_slot70", "bit0") Copy("_slot71", "bit1") Copy("_slot72", "bit2") Copy("_slot73", "bit3") },
+            { Copy("_slot80", "bit0") Copy("_slot81", "bit1") Copy("_slot82", "bit2") Copy("_slot83", "bit3") },
+            { Copy("_slot90", "bit0") Copy("_slot91", "bit1") Copy("_slot92", "bit2") Copy("_slot93", "bit3") },
+            { Copy("_slotA0", "bit0") Copy("_slotA1", "bit1") Copy("_slotA2", "bit2") Copy("_slotA3", "bit3") },
+            { Copy("_slotB0", "bit0") Copy("_slotB1", "bit1") Copy("_slotB2", "bit2") Copy("_slotB3", "bit3") },
+            { Copy("_slotC0", "bit0") Copy("_slotC1", "bit1") Copy("_slotC2", "bit2") Copy("_slotC3", "bit3") },
+            { Copy("_slotD0", "bit0") Copy("_slotD1", "bit1") Copy("_slotD2", "bit2") Copy("_slotD3", "bit3") },
+            { Copy("_slotE0", "bit0") Copy("_slotE1", "bit1") Copy("_slotE2", "bit2") Copy("_slotE3", "bit3") },
+            { Copy("_slotF0", "bit0") Copy("_slotF1", "bit1") Copy("_slotF2", "bit2") Copy("_slotF3", "bit3") }
+          )
+      }
+    }
+  }
+End
+
+Def Pop(Copy0, Copy1, Copy2, Copy3)
+  Chain {
+    Pop()
+    Copy("bit0", Copy0)
+    Copy("bit1", Copy1)
+    Copy("bit2", Copy2)
+    Copy("bit3", Copy3)
+  }
+End
