@@ -1,0 +1,74 @@
+Def Copy(A, B)
+  FirstSuccessful {
+    Filter Is1(A) Write1(B)
+    Filter Is0(A) Write0(B)
+  }
+End
+
+Def Eq(A, B)
+  Or { And { Is0(A) Is0(B) } And { Is1(A) Is1(B) } }
+End
+
+Def Is0(X)
+  Not Flag X
+End
+
+Def Is1(X)
+  Flag X
+End
+
+Def Write0(X)
+  SetFlag X false
+End
+
+Def Write1(X)
+  SetFlag X true
+End
+
+Def BinaryCounterSegmentUp(A, B, Cont)
+  FirstSuccessful {
+    Filter Is0(A) { Write1(A) }
+    Filter Is1(A) Chain { 
+      Write0(A)
+      FirstSuccessful { 
+        Filter Is0(B) { Write1(B) }
+        Filter Is1(B) Chain { 
+          Write0(B)
+          Cont
+          Write0(B)
+          Write0(A)
+        }
+      }
+    }
+  }
+End
+
+Def BinaryCounterSegmentDown(A, B, Cont)
+  FirstSuccessful {
+    Filter     Flag A { SetFlag A false }
+    Filter Not Flag A Chain { 
+      SetFlag A true 
+      FirstSuccessful {
+        Filter     Flag B { SetFlag B false  }
+        Filter Not Flag B Chain { 
+          SetFlag B true
+          Cont
+        }
+      }
+    }
+  }
+End
+
+Def Increment(Bit0, Bit1, Bit2, Bit3, CarryFlag)
+  Chain {
+    Write0(CarryFlag)
+    BinaryCounterSegmentUp(Bit0, Bit1, BinaryCounterSegmentUp(Bit2, Bit3, Write1(CarryFlag)))
+  }
+End
+
+Def Decrement(Bit0, Bit1, Bit2, Bit3, CarryFlag)
+  Chain {
+    Write0(CarryFlag)
+    BinaryCounterSegmentDown(Bit0, Bit1, BinaryCounterSegmentDown(Bit2, Bit3, Write1(CarryFlag)))
+  }
+End

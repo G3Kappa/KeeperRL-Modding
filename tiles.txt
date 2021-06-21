@@ -1,0 +1,10 @@
+
+{ "wire" "." ColorId RED }
+{ "wire_live" "." ColorId LIGHT_RED }
+{ "pressure_plate" "_" ColorId BROWN }
+{ "lever_off" "l" ColorId BROWN }
+{ "lever_on" "L" ColorId BROWN }
+{ "electric_door" "+" ColorId LIGHT_RED }
+{ "electric_door_locked" "+" ColorId RED }
+{ "electric_torch_off" "*" ColorId YELLOW }
+{ "not_gate" "*" ColorId YELLOW }
