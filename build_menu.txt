@@ -1,12 +1,13 @@
   "floors" modify append
   {
-    { Furniture {{ "WIRE" }               "WOOD" 0 }      "Wire"             "Floors" }
-    { Furniture {{ "ELEC_SOURCE" }             "WOOD" 0 }      "Redstone torch"      "Floors" }
-    { Furniture {{ "FIRE_TRAP_WIRED" }             "WOOD" 0 }      "Fire trap (wired)"      "Floors" }
-    { Furniture {{ "POISON_GAS_TRAP_WIRED" }             "WOOD" 0 }      "Poison gas trap (wired)"      "Floors" }
-    { Furniture {{ "PRESSURE_PLATE_NEUTRAL_INERT" }             "WOOD" 0 }      "Pressure plate"      "Floors" }
-    { Furniture {{ "LEVER_OFF" }             "WOOD" 0 }      "Lever"      "Floors" }
-    { Furniture {{ "ELECTRIC_DOOR" }             "WOOD" 0 }      "Automatic door"      "Floors" }
+    # { Furniture {{ "WIRE" }               "WOOD" 0 }      "Wire"             "Floors" }
+    # { Furniture {{ "ELEC_SOURCE" }             "WOOD" 0 }      "Redstone torch"      "Floors" }
+    # { Furniture {{ "FIRE_TRAP_WIRED" }             "WOOD" 0 }      "Fire trap (wired)"      "Floors" }
+    # { Furniture {{ "POISON_GAS_TRAP_WIRED" }             "WOOD" 0 }      "Poison gas trap (wired)"      "Floors" }
+    # { Furniture {{ "PRESSURE_PLATE_NEUTRAL_INERT" }             "WOOD" 0 }      "Pressure plate"      "Floors" }
+    # { Furniture {{ "LEVER_OFF" }             "WOOD" 0 }      "Lever"      "Floors" }
+    # { Furniture {{ "ELECTRIC_DOOR" }             "WOOD" 0 }      "Automatic door"      "Floors" }
+    # { Furniture {{ "NOT_GATE_OFF" }             "WOOD" 0 }      "Inverter"      "Floors" }
     { Furniture {{ "WRITE_0" }             "WOOD" 0 }      "Write 0"      "Floors" }
     { Furniture {{ "WRITE_1" }             "WOOD" 0 }      "Write 1"      "Floors" }
     { Furniture {{ "PUSH_TO_STACK" }             "WOOD" 0 }      "Push to stack"      "Floors" }
@@ -14,5 +15,4 @@
     { Furniture {{ "STACK_INDEX" }             "WOOD" 0 }      "Write stack index"      "Floors" }
     { Furniture {{ "ADD" }             "WOOD" 0 }      "Add"      "Floors" }
     { Furniture {{ "PRINT" }             "WOOD" 0 }      "Print"      "Floors" }
-    { Furniture {{ "NOT_GATE_OFF" }             "WOOD" 0 }      "Inverter"      "Floors" }
   }

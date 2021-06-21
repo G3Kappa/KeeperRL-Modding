@@ -142,7 +142,8 @@ Def XB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") } E
 Def XC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
 Def XD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") } End
 Def XE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End
-Def XF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } EndDef Error()
+Def XF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") } End
+Def Error()
   Or { Is1("_error0") Is1("_error1") Is1("_error2") Is1("_error3") }
 End
 
@@ -170,7 +171,27 @@ End
 
 Def WriteErrorStackUnderflow()
   Chain { X2() WriteError() }
-EndDef If(Cond, BodyIf)
+End
+Def Print()
+  Multiplex("bit0", "bit1", "bit2", "bit3", 
+    Message "0", 
+    Message "1", 
+    Message "2", 
+    Message "3", 
+    Message "4", 
+    Message "5", 
+    Message "6", 
+    Message "7", 
+    Message "8", 
+    Message "9", 
+    Message "10", 
+    Message "11", 
+    Message "12", 
+    Message "13", 
+    Message "14", 
+    Message "15")
+End
+Def If(Cond, BodyIf)
     Filter Cond BodyIf
 End
 
@@ -179,7 +200,8 @@ Def IfElse(Cond, BodyIf, BodyElse)
         If(BodyIf)
         BodyElse
     }
-EndDef Cmp(Lt, Lte, Eq, Gte, Gt)
+End
+Def Cmp(Lt, Lte, Eq, Gte, Gt)
   Chain {
     Write0(Lt)
     Write0(Lte)
@@ -220,25 +242,8 @@ Def Add()
     AddBits("A3", "B3", "C3", "bit3", "C4")
     Push()
   }
-EndDef Print()
-  Multiplex("bit0", "bit1", "bit2", "bit3", 
-    Message "0", 
-    Message "1", 
-    Message "2", 
-    Message "3", 
-    Message "4", 
-    Message "5", 
-    Message "6", 
-    Message "7", 
-    Message "8", 
-    Message "9", 
-    Message "10", 
-    Message "11", 
-    Message "12", 
-    Message "13", 
-    Message "14", 
-    Message "15")
-EndDef StackIndex()
+End
+Def StackIndex()
   Chain {
     Copy("_stack0", "bit0")
     Copy("_stack1", "bit1")
@@ -329,7 +334,8 @@ Def Pop(Copy0, Copy1, Copy2, Copy3)
     Copy("bit2", Copy2)
     Copy("bit3", Copy3)
   }
-End"PUSH_TO_STACK" inherit "GROUND_TORCH"
+End
+"PUSH_TO_STACK" inherit "GROUND_TORCH"
 {
   name = "push to stack"
   viewId = { "electric_torch_off" }
