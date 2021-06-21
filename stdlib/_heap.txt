@@ -1,13 +1,15 @@
 Def Addr()
-  Copy("bit0", "__a0")
-  Copy("bit1", "__a1")
-  Copy("bit2", "__a2")
-  Copy("bit3", "__a3")
-  Copy("bit4", "__a4")
-  Copy("bit5", "__a5")
-  Copy("bit6", "__a6")
-  Copy("bit7", "__a7")
-End()
+  Chain {
+    Copy("bit0", "__a0")
+    Copy("bit1", "__a1")
+    Copy("bit2", "__a2")
+    Copy("bit3", "__a3")
+    Copy("bit4", "__a4")
+    Copy("bit5", "__a5")
+    Copy("bit6", "__a6")
+    Copy("bit7", "__a7")
+  }
+End
 
 Def WriteHeap()
     Multiplex("__a0", "__a1", "__a2", "__a3", "__a4", "__a5", "__a6", "__a7",

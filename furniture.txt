@@ -1,6 +1,4 @@
-Def A()
-    
-EndDef Copy(A, B)
+Def Copy(A, B)
   FirstSuccessful {
     Filter Is1(A) Write1(B)
     Filter Is0(A) Write0(B)
@@ -118,528 +116,542 @@ End
 
 Def Multiplex(
   Bit0, Bit1, Bit2, Bit3, Bit4, Bit5, Bit6, Bit7, 
-  M0, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16, M17, M18, M19, M20, M21, M22, M23, M24, M25, M26, M27, M28, M29, M30, M31, M32, M33, M34, M35, M36, M37, M38, M39, M40, M41, M42, M43, M44, M45, M46, M47, M48, M49, M50, M51, M52, M53, M54, M55, M56, M57, M58, M59, M60, M61, M62, M63, M64, M65, M66, M67, M68, M69, M70, M71, M72, M73, M74, M75, M76, M77, M78, M79, M80, M81, M82, M83, M84, M85, M86, M87, M88, M89, M90, M91, M92, M93, M94, M95, M96, M97, M98, M99, M100, M101, M102, M103, M104, M105, M106, M107, M108, M109, M110, M111, M112, M113, M114, M115, M116, M117, M118, M119, M120, M121, M122, M123, M124, M125, M126, M127, M128, M129, M130, M131, M132, M133, M134, M135, M136, M137, M138, M139, M140, M141, M142, M143, M144, M145, M146, M147, M148, M149, M150, M151, M152, M153, M154, M155, M156, M157, M158, M159, M160, M161, M162, M163, M164, M165, M166, M167, M168, M169, M170, M171, M172, M173, M174, M175, M176, M177, M178, M179, M180, M181, M182, M183, M184, M185, M186, M187, M188, M189, M190, M191, M192, M193, M194, M195, M196, M197, M198, M199, M200, M201, M202, M203, M204, M205, M206, M207, M208, M209, M210, M211, M212, M213, M214, M215, M216, M217, M218, M219, M220, M221, M222, M223, M224, M225, M226, M227, M228, M229, M230, M231, M232, M233, M234, M235, M236, M237, M238, M239, M240, M241, M242, M243, M244, M245, M246, M247, M248, M249, M250, M251, M252, M253, M254, M255
+  M0, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16, 
+  M17, M18, M19, M20, M21, M22, M23, M24, M25, M26, M27, M28, M29, M30, M31, M32, 
+  M33, M34, M35, M36, M37, M38, M39, M40, M41, M42, M43, M44, M45, M46, M47, M48, 
+  M49, M50, M51, M52, M53, M54, M55, M56, M57, M58, M59, M60, M61, M62, M63, M64, 
+  M65, M66, M67, M68, M69, M70, M71, M72, M73, M74, M75, M76, M77, M78, M79, M80, 
+  M81, M82, M83, M84, M85, M86, M87, M88, M89, M90, M91, M92, M93, M94, M95, M96, 
+  M97, M98, M99, M100, M101, M102, M103, M104, M105, M106, M107, M108, M109, M110,
+  M111, M112, M113, M114, M115, M116, M117, M118, M119, M120, M121, M122, M123, 
+  M124, M125, M126, M127, M128, M129, M130, M131, M132, M133, M134, M135, M136, 
+  M137, M138, M139, M140, M141, M142, M143, M144, M145, M146, M147, M148, M149, 
+  M150, M151, M152, M153, M154, M155, M156, M157, M158, M159, M160, M161, M162, 
+  M163, M164, M165, M166, M167, M168, M169, M170, M171, M172, M173, M174, M175, 
+  M176, M177, M178, M179, M180, M181, M182, M183, M184, M185, M186, M187, M188, 
+  M189, M190, M191, M192, M193, M194, M195, M196, M197, M198, M199, M200, M201, 
+  M202, M203, M204, M205, M206, M207, M208, M209, M210, M211, M212, M213, M214, 
+  M215, M216, M217, M218, M219, M220, M221, M222, M223, M224, M225, M226, M227, 
+  M228, M229, M230, M231, M232, M233, M234, M235, M236, M237, M238, M239, M240, 
+  M241, M242, M243, M244, M245, M246, M247, M248, M249, M250, M251, M252, M253, 
+  M254, M255
 )
   FirstSuccessful {
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M0
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M1
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M2
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M3
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M4
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M5
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M6
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M7
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M8
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M9
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M10
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M11
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M12
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M13
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M14
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M15
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M16
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M17
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M18
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M19
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M20
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M21
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M22
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M23
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M24
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M25
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M26
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M27
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M28
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M29
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M30
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is0("Bit7")} M31
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M32
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M33
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M34
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M35
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M36
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M37
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M38
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M39
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M40
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M41
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M42
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M43
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M44
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M45
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M46
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M47
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M48
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M49
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M50
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M51
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M52
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M53
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M54
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M55
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M56
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M57
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M58
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M59
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M60
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M61
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M62
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is0("Bit7")} M63
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M64
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M65
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M66
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M67
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M68
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M69
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M70
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M71
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M72
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M73
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M74
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M75
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M76
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M77
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M78
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M79
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M80
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M81
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M82
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M83
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M84
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M85
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M86
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M87
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M88
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M89
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M90
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M91
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M92
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M93
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M94
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is0("Bit7")} M95
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M96
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M97
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M98
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M99
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M100
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M101
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M102
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M103
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M104
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M105
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M106
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M107
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M108
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M109
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M110
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M111
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M112
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M113
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M114
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M115
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M116
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M117
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M118
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M119
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M120
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M121
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M122
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M123
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M124
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M125
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M126
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is0("Bit7")} M127
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M128
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M129
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M130
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M131
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M132
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M133
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M134
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M135
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M136
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M137
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M138
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M139
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M140
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M141
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M142
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M143
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M144
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M145
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M146
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M147
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M148
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M149
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M150
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M151
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M152
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M153
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M154
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M155
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M156
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M157
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M158
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is0("Bit6") Is1("Bit7")} M159
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M160
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M161
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M162
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M163
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M164
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M165
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M166
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M167
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M168
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M169
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M170
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M171
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M172
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M173
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M174
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M175
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M176
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M177
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M178
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M179
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M180
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M181
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M182
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M183
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M184
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M185
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M186
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M187
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M188
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M189
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M190
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is0("Bit6") Is1("Bit7")} M191
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M192
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M193
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M194
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M195
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M196
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M197
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M198
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M199
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M200
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M201
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M202
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M203
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M204
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M205
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M206
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M207
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M208
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M209
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M210
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M211
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M212
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M213
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M214
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M215
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M216
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M217
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M218
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M219
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M220
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M221
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M222
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is0("Bit5") Is1("Bit6") Is1("Bit7")} M223
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M224
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M225
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M226
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M227
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M228
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M229
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M230
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M231
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M232
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M233
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M234
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M235
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M236
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M237
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M238
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is0("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M239
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M240
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M241
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M242
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M243
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M244
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M245
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M246
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is0("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M247
-    Filter And { Is0("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M248
-    Filter And { Is1("Bit0") Is0("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M249
-    Filter And { Is0("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M250
-    Filter And { Is1("Bit0") Is1("Bit1") Is0("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M251
-    Filter And { Is0("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M252
-    Filter And { Is1("Bit0") Is0("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M253
-    Filter And { Is0("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M254
-    Filter And { Is1("Bit0") Is1("Bit1") Is1("Bit2") Is1("Bit3") Is1("Bit4") Is1("Bit5") Is1("Bit6") Is1("Bit7")} M255
-
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M0
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M1
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M2
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M3
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M4
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M5
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M6
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M7
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M8
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M9
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M10
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M11
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M12
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M13
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M14
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M15
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M16
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M17
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M18
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M19
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M20
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M21
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M22
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M23
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M24
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M25
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M26
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M27
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M28
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M29
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M30
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is0(Bit7) } M31
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M32
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M33
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M34
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M35
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M36
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M37
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M38
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M39
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M40
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M41
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M42
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M43
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M44
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M45
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M46
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M47
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M48
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M49
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M50
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M51
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M52
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M53
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M54
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M55
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M56
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M57
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M58
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M59
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M60
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M61
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M62
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is0(Bit7) } M63
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M64
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M65
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M66
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M67
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M68
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M69
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M70
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M71
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M72
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M73
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M74
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M75
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M76
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M77
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M78
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M79
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M80
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M81
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M82
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M83
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M84
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M85
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M86
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M87
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M88
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M89
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M90
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M91
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M92
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M93
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M94
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is0(Bit7) } M95
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M96
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M97
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M98
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M99
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M100
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M101
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M102
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M103
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M104
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M105
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M106
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M107
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M108
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M109
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M110
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M111
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M112
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M113
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M114
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M115
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M116
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M117
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M118
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M119
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M120
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M121
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M122
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M123
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M124
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M125
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M126
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is0(Bit7) } M127
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M128
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M129
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M130
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M131
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M132
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M133
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M134
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M135
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M136
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M137
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M138
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M139
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M140
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M141
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M142
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M143
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M144
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M145
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M146
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M147
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M148
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M149
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M150
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M151
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M152
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M153
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M154
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M155
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M156
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M157
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M158
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is0(Bit6) Is1(Bit7) } M159
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M160
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M161
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M162
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M163
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M164
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M165
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M166
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M167
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M168
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M169
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M170
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M171
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M172
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M173
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M174
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M175
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M176
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M177
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M178
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M179
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M180
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M181
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M182
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M183
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M184
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M185
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M186
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M187
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M188
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M189
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M190
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is0(Bit6) Is1(Bit7) } M191
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M192
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M193
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M194
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M195
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M196
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M197
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M198
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M199
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M200
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M201
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M202
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M203
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M204
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M205
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M206
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M207
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M208
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M209
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M210
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M211
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M212
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M213
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M214
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M215
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M216
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M217
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M218
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M219
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M220
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M221
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M222
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is0(Bit5) Is1(Bit6) Is1(Bit7) } M223
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M224
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M225
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M226
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M227
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M228
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M229
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M230
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M231
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M232
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M233
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M234
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M235
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M236
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M237
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M238
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is0(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M239
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M240
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M241
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M242
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M243
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M244
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M245
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M246
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is0(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M247
+    Filter And { Is0(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M248
+    Filter And { Is1(Bit0) Is0(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M249
+    Filter And { Is0(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M250
+    Filter And { Is1(Bit0) Is1(Bit1) Is0(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M251
+    Filter And { Is0(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M252
+    Filter And { Is1(Bit0) Is0(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M253
+    Filter And { Is0(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M254
+    Filter And { Is1(Bit0) Is1(Bit1) Is1(Bit2) Is1(Bit3) Is1(Bit4) Is1(Bit5) Is1(Bit6) Is1(Bit7) } M255
   }
 End
 
-
-
-
-Def X0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def XA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def XB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def XC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def XD() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def XE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def XF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X10() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X11() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X12() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X13() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X14() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X15() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X16() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X17() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X18() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X19() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X1F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X20() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X21() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X22() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X23() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X24() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X25() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X26() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X27() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X28() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X29() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X2F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X30() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X31() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X32() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X33() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X34() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X35() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X36() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X37() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X38() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X39() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X3F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write0("Bit7")} End
-Def X40() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X41() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X42() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X43() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X44() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X45() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X46() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X47() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X48() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X49() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X4A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X4B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X4C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X4D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X4E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X4F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X50() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X51() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X52() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X53() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X54() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X55() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X56() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X57() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X58() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X59() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X5A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X5B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X5C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X5D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X5E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X5F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X60() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X61() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X62() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X63() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X64() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X65() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X66() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X67() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X68() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X69() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X6A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X6B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X6C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X6D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X6E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X6F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X70() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X71() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X72() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X73() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X74() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X75() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X76() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X77() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X78() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X79() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X7A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X7B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X7C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X7D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X7E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X7F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write0("Bit7")} End
-Def X80() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X81() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X82() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X83() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X84() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X85() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X86() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X87() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X88() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X89() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X8A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X8B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X8C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X8D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X8E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X8F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X90() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X91() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X92() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X93() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X94() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X95() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X96() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X97() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X98() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X99() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X9A() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X9B() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X9C() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X9D() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X9E() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def X9F() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XA9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XAA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XAB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XAC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XAD() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XAE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XAF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XB9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XBA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XBB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XBC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XBD() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XBE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XBF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write0("Bit6") Write1("Bit7")} End
-Def XC0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XC9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XCA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XCB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XCC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XCD() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XCE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XCF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XD9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XDA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XDB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XDC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XDD() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XDE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XDF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write0("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XE9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XEA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XEB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XEC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XED() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XEE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XEF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write0("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF0() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF1() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF2() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF3() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF4() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF5() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF6() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF7() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write0("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF8() Chain { Write0("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XF9() Chain { Write1("Bit0") Write0("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XFA() Chain { Write0("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XFB() Chain { Write1("Bit0") Write1("Bit1") Write0("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XFC() Chain { Write0("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XFD() Chain { Write1("Bit0") Write0("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XFE() Chain { Write0("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
-Def XFF() Chain { Write1("Bit0") Write1("Bit1") Write1("Bit2") Write1("Bit3") Write1("Bit4") Write1("Bit5") Write1("Bit6") Write1("Bit7")} End
+Def X0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def XA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def XB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def XC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def XD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def XE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def XF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X10() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X11() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X12() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X13() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X14() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X15() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X16() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X17() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X18() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X19() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X1F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def X20() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X21() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X22() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X23() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X24() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X25() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X26() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X27() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X28() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X29() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X2A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X2B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X2C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X2D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X2E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X2F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X30() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X31() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X32() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X33() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X34() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X35() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X36() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X37() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X38() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X39() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X3A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X3B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X3C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X3D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X3E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X3F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write0("bit7")} End
+Def X40() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X41() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X42() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X43() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X44() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X45() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X46() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X47() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X48() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X49() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X4A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X4B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X4C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X4D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X4E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X4F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X50() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X51() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X52() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X53() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X54() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X55() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X56() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X57() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X58() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X59() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X5A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X5B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X5C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X5D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X5E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X5F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write0("bit7")} End
+Def X60() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X61() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X62() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X63() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X64() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X65() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X66() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X67() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X68() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X69() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X6A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X6B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X6C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X6D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X6E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X6F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X70() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X71() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X72() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X73() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X74() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X75() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X76() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X77() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X78() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X79() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X7A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X7B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X7C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X7D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X7E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X7F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write0("bit7")} End
+Def X80() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X81() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X82() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X83() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X84() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X85() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X86() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X87() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X88() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X89() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X8A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X8B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X8C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X8D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X8E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X8F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X90() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X91() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X92() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X93() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X94() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X95() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X96() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X97() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X98() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X99() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X9A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X9B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X9C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X9D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X9E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def X9F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write1("bit7")} End
+Def XA0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XA9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XAA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XAB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XAC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XAD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XAE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XAF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XB9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XBA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XBB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XBC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XBD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XBE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XBF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write0("bit6") Write1("bit7")} End
+Def XC0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XC9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XCA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XCB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XCC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XCD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XCE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XCF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XD9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XDA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XDB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XDC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XDD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XDE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XDF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write0("bit5") Write1("bit6") Write1("bit7")} End
+Def XE0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XE9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XEA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XEB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XEC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XED() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XEE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XEF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XF9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XFA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XFB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XFC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XFD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XFE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
+Def XFF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write1("bit4") Write1("bit5") Write1("bit6") Write1("bit7")} End
 Def Error()
   Or { Is1("_error0") Is1("_error1") Is1("_error2") Is1("_error3") }
 End
@@ -669,17 +681,18 @@ End
 Def WriteErrorStackUnderflow()
   Chain { X2() WriteError() }
 End
-
 Def Addr()
-  Copy("bit0", "__a0")
-  Copy("bit1", "__a1")
-  Copy("bit2", "__a2")
-  Copy("bit3", "__a3")
-  Copy("bit4", "__a4")
-  Copy("bit5", "__a5")
-  Copy("bit6", "__a6")
-  Copy("bit7", "__a7")
-End()
+  Chain {
+    Copy("bit0", "__a0")
+    Copy("bit1", "__a1")
+    Copy("bit2", "__a2")
+    Copy("bit3", "__a3")
+    Copy("bit4", "__a4")
+    Copy("bit5", "__a5")
+    Copy("bit6", "__a6")
+    Copy("bit7", "__a7")
+  }
+End
 
 Def WriteHeap()
     Multiplex("__a0", "__a1", "__a2", "__a3", "__a4", "__a5", "__a6", "__a7",
@@ -1201,7 +1214,8 @@ Def ReadHeap()
         { Copy("_heapFE0", "bit0") Copy("_heapFE1", "bit1") Copy("_heapFE2", "bit2") Copy("_heapFE3", "bit3") Copy("_heapFE4", "bit4") Copy("_heapFE5", "bit5") Copy("_heapFE6", "bit6") Copy("_heapFE7", "bit7") },
         { Copy("_heapFF0", "bit0") Copy("_heapFF1", "bit1") Copy("_heapFF2", "bit2") Copy("_heapFF3", "bit3") Copy("_heapFF4", "bit4") Copy("_heapFF5", "bit5") Copy("_heapFF6", "bit6") Copy("_heapFF7", "bit7") }
     )
-EndDef Print()
+End
+Def Print()
   Multiplex("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
     Message "0",
     Message "1",
@@ -1487,139 +1501,137 @@ Def Add()
     # TODO Set carry flag in F register
     Push()
   }
-EndDef WriteA()
-    Copy("__A0", "bit0")
-    Copy("__A1", "bit1")
-    Copy("__A2", "bit2")
-    Copy("__A3", "bit3")
-    Copy("__A4", "bit4")
-    Copy("__A5", "bit5")
-    Copy("__A6", "bit6")
-    Copy("__A7", "bit7")
-End()
+End
+Def WriteA()
+    Chain {
+        Copy("__A0", "bit0")
+        Copy("__A1", "bit1")
+        Copy("__A2", "bit2")
+        Copy("__A3", "bit3")
+        Copy("__A4", "bit4")
+        Copy("__A5", "bit5")
+        Copy("__A6", "bit6")
+        Copy("__A7", "bit7")
+    }
+End
 
 Def ReadA()
-    Copy("bit0", "__A0")
-    Copy("bit1", "__A1")
-    Copy("bit2", "__A2")
-    Copy("bit3", "__A3")
-    Copy("bit4", "__A4")
-    Copy("bit5", "__A5")
-    Copy("bit6", "__A6")
-    Copy("bit7", "__A7")
-End()
+    Chain {
+        Copy("bit0", "__A0")
+        Copy("bit1", "__A1")
+        Copy("bit2", "__A2")
+        Copy("bit3", "__A3")
+        Copy("bit4", "__A4")
+        Copy("bit5", "__A5")
+        Copy("bit6", "__A6")
+        Copy("bit7", "__A7")
+    }
+End
 
 Def WriteF()
-    Copy("__F0", "bit0")
-    Copy("__F1", "bit1")
-    Copy("__F2", "bit2")
-    Copy("__F3", "bit3")
-    Copy("__F4", "bit4")
-    Copy("__F5", "bit5")
-    Copy("__F6", "bit6")
-    Copy("__F7", "bit7")
-End()
+    Chain {
+        Copy("__F0", "bit0")
+        Copy("__F1", "bit1")
+        Copy("__F2", "bit2")
+        Copy("__F3", "bit3")
+        Copy("__F4", "bit4")
+        Copy("__F5", "bit5")
+        Copy("__F6", "bit6")
+        Copy("__F7", "bit7")
+    }
+End
 
 Def ReadF()
-    Copy("bit0", "__F0")
-    Copy("bit1", "__F1")
-    Copy("bit2", "__F2")
-    Copy("bit3", "__F3")
-    Copy("bit4", "__F4")
-    Copy("bit5", "__F5")
-    Copy("bit6", "__F6")
-    Copy("bit7", "__F7")
-End()
+    Chain {
+        Copy("bit0", "__F0")
+        Copy("bit1", "__F1")
+        Copy("bit2", "__F2")
+        Copy("bit3", "__F3")
+        Copy("bit4", "__F4")
+        Copy("bit5", "__F5")
+        Copy("bit6", "__F6")
+        Copy("bit7", "__F7")
+    }
+End
 
 Def WriteB()
-    Copy("__B0", "bit0")
-    Copy("__B1", "bit1")
-    Copy("__B2", "bit2")
-    Copy("__B3", "bit3")
-    Copy("__B4", "bit4")
-    Copy("__B5", "bit5")
-    Copy("__B6", "bit6")
-    Copy("__B7", "bit7")
-End()
+    Chain {
+        Copy("__B0", "bit0")
+        Copy("__B1", "bit1")
+        Copy("__B2", "bit2")
+        Copy("__B3", "bit3")
+        Copy("__B4", "bit4")
+        Copy("__B5", "bit5")
+        Copy("__B6", "bit6")
+        Copy("__B7", "bit7")
+    }
+End
 
 Def ReadB()
-    Copy("bit0", "__B0")
-    Copy("bit1", "__B1")
-    Copy("bit2", "__B2")
-    Copy("bit3", "__B3")
-    Copy("bit4", "__B4")
-    Copy("bit5", "__B5")
-    Copy("bit6", "__B6")
-    Copy("bit7", "__B7")
-End()
+    Chain {
+        Copy("bit0", "__B0")
+        Copy("bit1", "__B1")
+        Copy("bit2", "__B2")
+        Copy("bit3", "__B3")
+        Copy("bit4", "__B4")
+        Copy("bit5", "__B5")
+        Copy("bit6", "__B6")
+        Copy("bit7", "__B7")
+    }
+End
 
 
 Def WriteC()
-    Copy("__C0", "bit0")
-    Copy("__C1", "bit1")
-    Copy("__C2", "bit2")
-    Copy("__C3", "bit3")
-    Copy("__C4", "bit4")
-    Copy("__C5", "bit5")
-    Copy("__C6", "bit6")
-    Copy("__C7", "bit7")
-End()
+    Chain {
+        Copy("__C0", "bit0")
+        Copy("__C1", "bit1")
+        Copy("__C2", "bit2")
+        Copy("__C3", "bit3")
+        Copy("__C4", "bit4")
+        Copy("__C5", "bit5")
+        Copy("__C6", "bit6")
+        Copy("__C7", "bit7")
+    }
+End
 
 Def ReadC()
-    Copy("bit0", "__C0")
-    Copy("bit1", "__C1")
-    Copy("bit2", "__C2")
-    Copy("bit3", "__C3")
-    Copy("bit4", "__C4")
-    Copy("bit5", "__C5")
-    Copy("bit6", "__C6")
-    Copy("bit7", "__C7")
-End()
+    Chain {
+        Copy("bit0", "__C0")
+        Copy("bit1", "__C1")
+        Copy("bit2", "__C2")
+        Copy("bit3", "__C3")
+        Copy("bit4", "__C4")
+        Copy("bit5", "__C5")
+        Copy("bit6", "__C6")
+        Copy("bit7", "__C7")
+    }
+End
 
 Def WriteSP()
-    Copy("__SP0", "bit0")
-    Copy("__SP1", "bit1")
-    Copy("__SP2", "bit2")
-    Copy("__SP3", "bit3")
-    Copy("__SP4", "bit4")
-    Copy("__SP5", "bit5")
-    Copy("__SP6", "bit6")
-    Copy("__SP7", "bit7")
-End()
+    Chain {
+        Copy("__SP0", "bit0")
+        Copy("__SP1", "bit1")
+        Copy("__SP2", "bit2")
+        Copy("__SP3", "bit3")
+        Copy("__SP4", "bit4")
+        Copy("__SP5", "bit5")
+        Copy("__SP6", "bit6")
+        Copy("__SP7", "bit7")
+    }
+End
 
-Def ReadSP()
-    Copy("bit0", "__SP0")
-    Copy("bit1", "__SP1")
-    Copy("bit2", "__SP2")
-    Copy("bit3", "__SP3")
-    Copy("bit4", "__SP4")
-    Copy("bit5", "__SP5")
-    Copy("bit6", "__SP6")
-    Copy("bit7", "__SP7")
-End()
-
-Def WritePC()
-    Copy("__PC0", "bit0")
-    Copy("__PC1", "bit1")
-    Copy("__PC2", "bit2")
-    Copy("__PC3", "bit3")
-    Copy("__PC4", "bit4")
-    Copy("__PC5", "bit5")
-    Copy("__PC6", "bit6")
-    Copy("__PC7", "bit7")
-End()
-
-Def ReadPC()
-    Copy("bit0", "__PC0")
-    Copy("bit1", "__PC1")
-    Copy("bit2", "__PC2")
-    Copy("bit3", "__PC3")
-    Copy("bit4", "__PC4")
-    Copy("bit5", "__PC5")
-    Copy("bit6", "__PC6")
-    Copy("bit7", "__PC7")
-End()
-Def Push()
+Def ReadSP() 
+    Chain {
+        Copy("bit0", "__SP0")
+        Copy("bit1", "__SP1")
+        Copy("bit2", "__SP2")
+        Copy("bit3", "__SP3")
+        Copy("bit4", "__SP4")
+        Copy("bit5", "__SP5")
+        Copy("bit6", "__SP6")
+        Copy("bit7", "__SP7")
+    }
+EndDef Push()
   Chain {
     FirstSuccessful {
       Chain {
@@ -2266,3 +2278,5 @@ End
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
 }
+
+
