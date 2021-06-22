@@ -3,9 +3,8 @@
 {
   name = "push to stack"
   viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
+  tickType = Effect Chain {
     Push()
-    Message "Pushed"
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
@@ -43,17 +42,17 @@
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
 }
-# "ADD" inherit "GROUND_TORCH" 
-# { 
-#   name = "add"
-#   viewId = { "electric_torch_off" }
-#   usageType = UsageEffect "" Chain {
-#     Add()
-#     Message "Added 2 items"
-#   }
-#   canBuildOutsideOfTerritory = true
-#   xForgetAfterBuilding = true
-# }
+"ADD" inherit "GROUND_TORCH" 
+{ 
+  name = "add"
+  viewId = { "electric_torch_off" }
+  usageType = UsageEffect "" Chain {
+    Add()
+    Message "Added 2 items"
+  }
+  canBuildOutsideOfTerritory = true
+  xForgetAfterBuilding = true
+}
 "PRINT" inherit "GROUND_TORCH" 
 { 
   name = "print"

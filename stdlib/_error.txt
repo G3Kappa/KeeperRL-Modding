@@ -21,9 +21,9 @@ Def ClearError()
 End
 
 Def WriteErrorStackOverflow()
-  Chain { X1() WriteError() }
+  Chain { 0x1() WriteError() }
 End
 
 Def WriteErrorStackUnderflow()
-  Chain { X2() WriteError() }
+  Chain { 0x2() WriteError() }
 End

@@ -10,7 +10,7 @@
     # { Furniture {{ "NOT_GATE_OFF" }             "WOOD" 0 }      "Inverter"      "Floors" }
     { Furniture {{ "PUSH_TO_STACK" }             "WOOD" 0 }      "Push to stack"      "Floors" }
     { Furniture {{ "POP_FROM_STACK" }             "WOOD" 0 }      "Pop from stack"      "Floors" }
-    #{ Furniture {{ "ADD" }             "WOOD" 0 }      "Add"      "Floors" }
+    { Furniture {{ "ADD" }             "WOOD" 0 }      "Add"      "Floors" }
     { Furniture {{ "PRINT" }             "WOOD" 0 }      "Print"      "Floors" }
     { Furniture {{ "WRITE_0" }             "WOOD" 0 }      "Write 0"      "Floors" }
     { Furniture {{ "WRITE_1" }             "WOOD" 0 }      "Write 1"      "Floors" }
