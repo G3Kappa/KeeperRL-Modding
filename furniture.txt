@@ -1,3 +1,542 @@
+Def NULL() Chain {
+    0x00()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def 0() Chain {
+    0x30()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 1() Chain {
+    0x31()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 2() Chain {
+    0x32()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 3() Chain {
+    0x33()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 4() Chain {
+    0x34()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 5() Chain {
+    0x35()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 6() Chain {
+    0x36()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 7() Chain {
+    0x37()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 8() Chain {
+    0x38()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def 9() Chain {
+    0x39()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+
+Def A() Chain {
+    0x41()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def B() Chain {
+    0x42()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def C() Chain {
+    0x43()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def D() Chain {
+    0x44()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def E() Chain {
+    0x45()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def F() Chain {
+    0x46()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def G() Chain {
+    0x47()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def H() Chain {
+    0x48()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def I() Chain {
+    0x49()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def J() Chain {
+    0x4A()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def K() Chain {
+    0x4B()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def L() Chain {
+    0x4C()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def M() Chain {
+    0x4D()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def N() Chain {
+    0x4E()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def O() Chain {
+    0x4F()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def P() Chain {
+    0x50()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def Q() Chain {
+    0x51()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def R() Chain {
+    0x52()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def S() Chain {
+    0x53()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def T() Chain {
+    0x54()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def U() Chain {
+    0x55()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def V() Chain {
+    0x56()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def W() Chain {
+    0x57()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def X() Chain {
+    0x58()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def Y() Chain {
+    0x59()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def Z() Chain {
+    0x5A()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def a() Chain {
+    0x61()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def b() Chain {
+    0x62()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def c() Chain {
+    0x63()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def d() Chain {
+    0x64()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def e() Chain {
+    0x65()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def f() Chain {
+    0x66()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def g() Chain {
+    0x67()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def h() Chain {
+    0x68()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def i() Chain {
+    0x69()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def j() Chain {
+    0x6A()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def k() Chain {
+    0x6B()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def l() Chain {
+    0x6C()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def m() Chain {
+    0x6D()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def n() Chain {
+    0x6E()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def o() Chain {
+    0x6F()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def p() Chain {
+    0x70()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def q() Chain {
+    0x71()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def r() Chain {
+    0x72()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def s() Chain {
+    0x73()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def t() Chain {
+    0x74()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def u() Chain {
+    0x75()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def v() Chain {
+    0x76()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def w() Chain {
+    0x77()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def x() Chain {
+    0x78()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def y() Chain {
+    0x79()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def z() Chain {
+    0x7A()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def space() Chain {
+    0x20()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def exclamation() Chain {
+    0x21()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def quotes() Chain {
+    0x22()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def pound() Chain {
+    0x23()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def dollar() Chain {
+    0x24()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def percent() Chain {
+    0x25()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def ampersand() Chain {
+    0x26()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def apostrophe() Chain {
+    0x27()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def oparen() Chain {
+    0x28()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def cparen() Chain {
+    0x29()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def asterisk() Chain {
+    0x2A()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def plus() Chain {
+    0x2B()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def comma() Chain {
+    0x2C()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def dash() Chain {
+    0x2D()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def minus() dash() End
+
+Def period() Chain {
+    0x2E()
+    WriteHeap()
+    IncAddr()
+} End
+
+Def slash() Chain {
+    0x2F()
+    WriteHeap()
+    IncAddr()
+} End
+
 Def print()
     CopyFromHL() Addr()
     ReadHeap() PrintASCII() IncAddr()
@@ -1775,9 +2314,15 @@ End
 Def ld()
     # If the left hand side is an address
     IfElse(Is1("__LHSA"), {
-        CopyFromRegister(EqLhs()) Addr()
-        EvalRhs() WriteHeap()
-    # If the left hand side is a Register index
+        regSP() IfElse(EqLhs(), {
+            PopStack() 
+            CopyFromRegister(EqLhs()) 
+            PushStack()
+        }, {
+            CopyFromRegister(EqLhs()) Addr()
+            EvalRhs() WriteHeap()
+        })
+    # If the left hand side is a register index
     }, {
         CopyToRegister(EqLhs(), EvalRhs())
     })
@@ -1790,11 +2335,11 @@ Def ex()
 End
 
 Def push()
-    CopyFromRegister(EqLhs()) PushStack()
+    CopyFromRegister(EqRhs()) PushStack()
 End
 
 Def pop()
-    PopStack() CopyToRegister(EqLhs())
+    PopStack() CopyToRegister(EqRhs())
 End
 Def Lhs() Chain {
     Write0("__LHSA")
@@ -1843,9 +2388,17 @@ End
 Def CopyToLhs()
     IfElse(Is1("__LHSA"), {
         CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
-        CopyFromLhs() Addr()
-        CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
-        WriteHeap()
+        regSP() IfElse(EqLhs(), {
+            # Special syntax for (SP), currently doesn't support offsets
+            PopStack()
+            CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+            PushStack()
+        }, {
+            # All other addresses are assumed to be heap locations
+            CopyFromLhs() Addr()
+            CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+            WriteHeap()
+        })
     }, {
         CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
     })
@@ -1854,9 +2407,17 @@ End
 Def CopyToRhs()
     IfElse(Is1("__RHSA"), {
         CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
-        CopyFromRhs() Addr()
-        CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
-        WriteHeap()
+        regSP() IfElse(EqRhs(), {
+            # Special syntax for (SP), currently doesn't support offsets
+            PopStack()
+            CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+            PushStack()
+        }, {
+            # All other addresses are assumed to be heap locations
+            CopyFromRhs() Addr()
+            CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+            WriteHeap()
+        })
     }, {
         CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
     })
@@ -1864,34 +2425,38 @@ End
 
 Def CopyToRegister(Predicate, Body)
     FirstSuccessful {
-        ChainUntilFail {  RegA() If(Predicate, { Body  CopyToA()  }) }
-        ChainUntilFail {  RegB() If(Predicate, { Body  CopyToB()  }) }
-        ChainUntilFail {  RegC() If(Predicate, { Body  CopyToC()  }) }
-        ChainUntilFail {  RegD() If(Predicate, { Body  CopyToD()  }) }
-        ChainUntilFail {  RegE() If(Predicate, { Body  CopyToE()  }) }
-        ChainUntilFail { RegHL() If(Predicate, { Body CopyToHL()  }) }
-        ChainUntilFail { RegSP() If(Predicate, { Body CopyToSP()  }) }
+        ChainUntilFail {  regA() If(Predicate, { Body  CopyToA()  }) }
+        ChainUntilFail {  regB() If(Predicate, { Body  CopyToB()  }) }
+        ChainUntilFail {  regC() If(Predicate, { Body  CopyToC()  }) }
+        ChainUntilFail {  regD() If(Predicate, { Body  CopyToD()  }) }
+        ChainUntilFail {  regE() If(Predicate, { Body  CopyToE()  }) }
+        ChainUntilFail { regHL() If(Predicate, { Body CopyToHL()  }) }
+        ChainUntilFail { regSP() If(Predicate, { Body CopyToSP()  }) }
     }
 End
 
 Def CopyFromRegister(Predicate)
     FirstSuccessful {
-        ChainUntilFail {  RegA() If(Predicate, {  CopyFromA()  }) }
-        ChainUntilFail {  RegB() If(Predicate, {  CopyFromB()  }) }
-        ChainUntilFail {  RegC() If(Predicate, {  CopyFromC()  }) }
-        ChainUntilFail {  RegD() If(Predicate, {  CopyFromD()  }) }
-        ChainUntilFail {  RegE() If(Predicate, {  CopyFromE()  }) }
-        ChainUntilFail { RegHL() If(Predicate, { CopyFromHL()  }) }
-        ChainUntilFail { RegSP() If(Predicate, { CopyFromSP()  }) }
+        ChainUntilFail {  regA() If(Predicate, {  CopyFromA()  }) }
+        ChainUntilFail {  regB() If(Predicate, {  CopyFromB()  }) }
+        ChainUntilFail {  regC() If(Predicate, {  CopyFromC()  }) }
+        ChainUntilFail {  regD() If(Predicate, {  CopyFromD()  }) }
+        ChainUntilFail {  regE() If(Predicate, {  CopyFromE()  }) }
+        ChainUntilFail { regHL() If(Predicate, { CopyFromHL()  }) }
+        ChainUntilFail { regSP() If(Predicate, { CopyFromSP()  }) }
     }
 End
 
 Def EvalLhs()
     # If the left hand side is an address
     IfElse(Is1("__LHSA"), {
-        CopyFromRegister(EqLhs()) Addr() ReadHeap()
-    # If the left hand side is a Register index
+        regSP() IfElse(EqRhs(), {
+            PeekStack()
+        }, {
+            CopyFromRegister(EqLhs()) Addr() ReadHeap()
+        })
     }, {
+        # If the left hand side is a register index
         CopyFromRegister(EqLhs())
     })
 End
@@ -1903,23 +2468,26 @@ Def EvalRhs()
     }, {
         # If the right hand side is an address
         IfElse(Is1("__RHSA"), {
-            CopyFromRegister(EqRhs()) Addr() ReadHeap()
-        # If the right hand side is a Register index
+            regSP() IfElse(EqRhs(), {
+                PeekStack()
+            }, {
+                CopyFromRegister(EqRhs()) Addr() ReadHeap()
+            })
         }, {
-            # Find the Register
+            # If the right hand side is a register index
             CopyFromRegister(EqRhs())
         })
     })
 End
 
-Def RegA() 0x01() End
-Def RegF() 0x11() End
-Def RegB() 0x02() End
-Def RegC() 0x12() End
-Def RegD() 0x03() End
-Def RegE() 0x13() End
-Def RegHL() 0x20() End
-Def RegSP() 0x21() End
+Def regA() 0x01() End
+Def regF() 0x11() End
+Def regB() 0x02() End
+Def regC() 0x12() End
+Def regD() 0x03() End
+Def regE() 0x13() End
+Def regHL() 0x20() End
+Def regSP() 0x21() End
 
 Def CopyFromA() CopyFrom("__A0", "__A1", "__A2", "__A3", "__A4", "__A5", "__A6", "__A7") End
 Def CopyFromF() CopyFrom("__F0", "__F1", "__F2", "__F3", "__F4", "__F5", "__F6", "__F7") End
@@ -1942,7 +2510,7 @@ Def PushStack()
   Chain {
     FirstSuccessful {
       Chain {
-        Demux("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
+        Demultiplex("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
           { Copy("bit0", "_stack00") Copy("bit1", "_stack01") Copy("bit2", "_stack02") Copy("bit3", "_stack03") Copy("bit4", "_stack04") Copy("bit5", "_stack05") Copy("bit6", "_stack06") Copy("bit7", "_stack07") },
           { Copy("bit0", "_stack10") Copy("bit1", "_stack11") Copy("bit2", "_stack12") Copy("bit3", "_stack13") Copy("bit4", "_stack14") Copy("bit5", "_stack15") Copy("bit6", "_stack16") Copy("bit7", "_stack17") },
           { Copy("bit0", "_stack20") Copy("bit1", "_stack21") Copy("bit2", "_stack22") Copy("bit3", "_stack23") Copy("bit4", "_stack24") Copy("bit5", "_stack25") Copy("bit6", "_stack26") Copy("bit7", "_stack27") },
@@ -2233,7 +2801,7 @@ Def PopStack()
           Message "stack underflow"
           WriteErrorStackUnderflow()
         }
-        Demux("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
+        Demultiplex("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
           { Copy("_stack00", "bit0") Copy("_stack01", "bit1") Copy("_stack02", "bit2") Copy("_stack03", "bit3") Copy("_stack04", "bit4") Copy("_stack05", "bit5") Copy("_stack06", "bit6") Copy("_stack07", "bit7") },
           { Copy("_stack10", "bit0") Copy("_stack11", "bit1") Copy("_stack12", "bit2") Copy("_stack13", "bit3") Copy("_stack14", "bit4") Copy("_stack15", "bit5") Copy("_stack16", "bit6") Copy("_stack17", "bit7") },
           { Copy("_stack20", "bit0") Copy("_stack21", "bit1") Copy("_stack22", "bit2") Copy("_stack23", "bit3") Copy("_stack24", "bit4") Copy("_stack25", "bit5") Copy("_stack26", "bit6") Copy("_stack27", "bit7") },
@@ -2510,16 +3078,45 @@ Def PopBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
   }
 End
 
+Def PeekStack()
+  Chain {
+    PopStack()
+    PushStack()
+  }
+End
+
+Def PeekBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
+  Chain {
+    PeekStack()
+    Copy("bit0", Copy0)
+    Copy("bit1", Copy1)
+    Copy("bit2", Copy2)
+    Copy("bit3", Copy3)
+    Copy("bit4", Copy4)
+    Copy("bit5", Copy5)
+    Copy("bit6", Copy6)
+    Copy("bit7", Copy7)
+  }
+End
+
+
 "TEST_FURNITURE" inherit "GROUND_TORCH"
 {
   name = "push to stack"
   viewId = { "electric_torch_off" }
-  tickType = Effect Chain {
-    0x00() CopyToHL() RegHL() LhsAddr()
-    0xF0() CopyToA() RegA() Rhs()
-    ld()
+  usageType = UsageEffect "" Chain {
+    0x0e() Addr() W() e() l() c() o() m() e() space() t() o() space() K() e() e() p() e() r() R() L() exclamation() NULL()
+    0x00() Addr() H() e() l() l() o() comma() space() W() o() r() l() d() exclamation() NULL()
+    regHL() Lhs() 0x00() RhsAddr() ld()
+    regHL() Rhs() push()
+    print()
+    regHL() Lhs() () 0x0e() RhsAddr() ld()
+    regSP() LhsAddr() regHL() Rhs() ex()
+    print()
+    regAF() Rhs() pop()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
 }
+
 

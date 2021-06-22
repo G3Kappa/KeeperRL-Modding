@@ -3,10 +3,16 @@
 {
   name = "push to stack"
   viewId = { "electric_torch_off" }
-  tickType = Effect Chain {
-    0x00() CopyToHL() RegHL() LhsAddr()
-    0xF0() CopyToA() RegA() Rhs()
-    ld()
+  usageType = UsageEffect "" Chain {
+    0x0e() Addr() W() e() l() c() o() m() e() space() t() o() space() K() e() e() p() e() r() R() L() exclamation() NULL()
+    0x00() Addr() H() e() l() l() o() comma() space() W() o() r() l() d() exclamation() NULL()
+    regHL() Lhs() 0x00() RhsAddr() ld()
+    regHL() Rhs() push()
+    print()
+    regHL() Lhs() () 0x0e() RhsAddr() ld()
+    regSP() LhsAddr() regHL() Rhs() ex()
+    print()
+    regAF() Rhs() pop()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true

@@ -1,9 +1,15 @@
 Def ld()
     # If the left hand side is an address
     IfElse(Is1("__LHSA"), {
-        CopyFromRegister(EqLhs()) Addr()
-        EvalRhs() WriteHeap()
-    # If the left hand side is a Register index
+        regSP() IfElse(EqLhs(), {
+            PopStack() 
+            CopyFromRegister(EqLhs()) 
+            PushStack()
+        }, {
+            CopyFromRegister(EqLhs()) Addr()
+            EvalRhs() WriteHeap()
+        })
+    # If the left hand side is a register index
     }, {
         CopyToRegister(EqLhs(), EvalRhs())
     })
