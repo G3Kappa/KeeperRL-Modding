@@ -1,64 +1,12 @@
 
-"PUSH_TO_STACK" inherit "GROUND_TORCH"
+"TEST_FURNITURE" inherit "GROUND_TORCH"
 {
   name = "push to stack"
   viewId = { "electric_torch_off" }
   tickType = Effect Chain {
-    Ld(rA(), rB())
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"POP_FROM_STACK" inherit "GROUND_TORCH" 
-{ 
-  name = "pop from stack"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    pop()
-    Message "Popped"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_0" inherit "GROUND_TORCH" 
-{ 
-  name = "write 0"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    0x00()
-    Message "Wrote 0 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_1" inherit "GROUND_TORCH" 
-{ 
-  name = "write 1"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    0x01()
-    Message "Wrote 1 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"ADD" inherit "GROUND_TORCH" 
-{ 
-  name = "add"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Add()
-    Message "Added 2 items"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"PRINT" inherit "GROUND_TORCH" 
-{ 
-  name = "print"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    PrintDecimal()
+    0x00() CopyToHL() RegHL() LhsAddr()
+    0xF0() CopyToA() RegA() Rhs()
+    LD()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true

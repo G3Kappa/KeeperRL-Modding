@@ -1,134 +1,140 @@
-Def 0() Chain {
+Def NULL() Chain {
+    0x00()
+    WriteHeap()
     IncAddr()
+} End
+
+Def 0() Chain {
     0x30()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 1() Chain {
-    IncAddr()
     0x31()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 2() Chain {
-    IncAddr()
     0x32()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 3() Chain {
-    IncAddr()
     0x33()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 4() Chain {
-    IncAddr()
     0x34()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 5() Chain {
-    IncAddr()
     0x35()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 6() Chain {
-    IncAddr()
     0x36()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 7() Chain {
-    IncAddr()
     0x37()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 8() Chain {
-    IncAddr()
     0x38()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def 9() Chain {
-    IncAddr()
     0x39()
     WriteHeap()
+    IncAddr()
 } End
 
 
 
 Def A() Chain {
-    IncAddr()
     0x41()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def B() Chain {
-    IncAddr()
     0x42()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def C() Chain {
-    IncAddr()
     0x43()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def D() Chain {
-    IncAddr()
     0x44()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def E() Chain {
-    IncAddr()
     0x45()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def F() Chain {
-    IncAddr()
     0x46()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def G() Chain {
-    IncAddr()
     0x47()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def H() Chain {
-    IncAddr()
     0x48()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def I() Chain {
-    IncAddr()
     0x49()
     WriteHeap()
+    IncAddr()
 } End
 
 
@@ -175,72 +181,72 @@ Def O() Chain {
 
 
 Def P() Chain {
-    IncAddr()
     0x50()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def Q() Chain {
-    IncAddr()
     0x51()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def R() Chain {
-    IncAddr()
     0x52()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def S() Chain {
-    IncAddr()
     0x53()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def T() Chain {
-    IncAddr()
     0x54()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def U() Chain {
-    IncAddr()
     0x55()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def V() Chain {
-    IncAddr()
     0x56()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def W() Chain {
-    IncAddr()
     0x57()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def X() Chain {
-    IncAddr()
     0x58()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def Y() Chain {
-    IncAddr()
     0x59()
     WriteHeap()
+    IncAddr()
 } End
 
 
@@ -250,246 +256,64 @@ Def Z() Chain {
     WriteHeap()
 } End
 
-
-Def a() Chain {
-    IncAddr()
-    0x61()
-    WriteHeap()
-} End
-
-
-Def b() Chain {
-    IncAddr()
-    0x62()
-    WriteHeap()
-} End
-
-
-Def c() Chain {
-    IncAddr()
-    0x63()
-    WriteHeap()
-} End
-
-
-Def d() Chain {
-    IncAddr()
-    0x64()
-    WriteHeap()
-} End
-
-
-Def e() Chain {
-    IncAddr()
-    0x65()
-    WriteHeap()
-} End
-
-
-Def f() Chain {
-    IncAddr()
-    0x66()
-    WriteHeap()
-} End
-
-
-Def g() Chain {
-    IncAddr()
-    0x67()
-    WriteHeap()
-} End
-
-
-Def h() Chain {
-    IncAddr()
-    0x68()
-    WriteHeap()
-} End
-
-
-Def i() Chain {
-    IncAddr()
-    0x69()
-    WriteHeap()
-} End
-
-
-Def j() Chain {
-    IncAddr()
-    0x6A()
-    WriteHeap()
-} End
-
-
-Def k() Chain {
-    IncAddr()
-    0x6B()
-    WriteHeap()
-} End
-
-
-Def l() Chain {
-    IncAddr()
-    0x6C()
-    WriteHeap()
-} End
-
-
-Def m() Chain {
-    IncAddr()
-    0x6D()
-    WriteHeap()
-} End
-
-
-Def n() Chain {
-    IncAddr()
-    0x6E()
-    WriteHeap()
-} End
-
-
-Def o() Chain {
-    IncAddr()
-    0x6F()
-    WriteHeap()
-} End
-
-
-Def p() Chain {
-    IncAddr()
-    0x70()
-    WriteHeap()
-} End
-
-
-Def q() Chain {
-    IncAddr()
-    0x71()
-    WriteHeap()
-} End
-
-
-Def r() Chain {
-    IncAddr()
-    0x72()
-    WriteHeap()
-} End
-
-
-Def s() Chain {
-    IncAddr()
-    0x73()
-    WriteHeap()
-} End
-
-
-Def t() Chain {
-    IncAddr()
-    0x74()
-    WriteHeap()
-} End
-
-
-Def u() Chain {
-    IncAddr()
-    0x75()
-    WriteHeap()
-} End
-
-
-Def v() Chain {
-    IncAddr()
-    0x76()
-    WriteHeap()
-} End
-
-
-Def w() Chain {
-    IncAddr()
-    0x77()
-    WriteHeap()
-} End
-
-
-Def x() Chain {
-    IncAddr()
-    0x78()
-    WriteHeap()
-} End
-
-
-Def y() Chain {
-    IncAddr()
-    0x79()
-    WriteHeap()
-} End
-
-
-Def z() Chain {
-    IncAddr()
-    0x7A()
-    WriteHeap()
-} End
-
 Def space() Chain {
-    IncAddr()
     0x20()
     WriteHeap()
+    IncAddr()
 } End
 
 Def exclamation() Chain {
-    IncAddr()
     0x21()
     WriteHeap()
+    IncAddr()
 } End
 
 Def quotes() Chain {
-    IncAddr()
     0x22()
     WriteHeap()
+    IncAddr()
 } End
 
 Def pound() Chain {
-    IncAddr()
     0x23()
     WriteHeap()
+    IncAddr()
 } End
 
 Def dollar() Chain {
-    IncAddr()
     0x24()
     WriteHeap()
+    IncAddr()
 } End
 
 Def percent() Chain {
-    IncAddr()
     0x25()
     WriteHeap()
+    IncAddr()
 } End
 
 Def ampersand() Chain {
-    IncAddr()
     0x26()
     WriteHeap()
+    IncAddr()
 } End
 
 Def apostrophe() Chain {
-    IncAddr()
     0x27()
     WriteHeap()
+    IncAddr()
 } End
 
 Def oparen() Chain {
-    IncAddr()
     0x28()
     WriteHeap()
+    IncAddr()
 } End
 
 Def cparen() Chain {
-    IncAddr()
     0x29()
     WriteHeap()
+    IncAddr()
 } End
 
 Def asterisk() Chain {

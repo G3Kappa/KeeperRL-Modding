@@ -64,23 +64,27 @@ Def CopyToRhs()
     })
 End
 
-Def CopyFromRhs()
-    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
-End
-
 Def CopyToRegister(Predicate, Body)
     FirstSuccessful {
-        If(regHL() Predicate, {
-            Body CopyTo("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7")
-        })
+        ChainUntilFail {  RegA() If(Predicate, { Body  CopyToA()  }) }
+        ChainUntilFail {  RegB() If(Predicate, { Body  CopyToB()  }) }
+        ChainUntilFail {  RegC() If(Predicate, { Body  CopyToC()  }) }
+        ChainUntilFail {  RegD() If(Predicate, { Body  CopyToD()  }) }
+        ChainUntilFail {  RegE() If(Predicate, { Body  CopyToE()  }) }
+        ChainUntilFail { RegHL() If(Predicate, { Body CopyToHL()  }) }
+        ChainUntilFail { RegSP() If(Predicate, { Body CopyToSP()  }) }
     }
 End
 
 Def CopyFromRegister(Predicate)
     FirstSuccessful {
-        If(regHL() Predicate, {
-            CopyFrom("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7")
-        })
+        ChainUntilFail {  RegA() If(Predicate, {  CopyFromA()  }) }
+        ChainUntilFail {  RegB() If(Predicate, {  CopyFromB()  }) }
+        ChainUntilFail {  RegC() If(Predicate, {  CopyFromC()  }) }
+        ChainUntilFail {  RegD() If(Predicate, {  CopyFromD()  }) }
+        ChainUntilFail {  RegE() If(Predicate, {  CopyFromE()  }) }
+        ChainUntilFail { RegHL() If(Predicate, { CopyFromHL()  }) }
+        ChainUntilFail { RegSP() If(Predicate, { CopyFromSP()  }) }
     }
 End
 
@@ -88,7 +92,7 @@ Def EvalLhs()
     # If the left hand side is an address
     IfElse(Is1("__LHSA"), {
         CopyFromRegister(EqLhs()) Addr() ReadHeap()
-    # If the left hand side is a register index
+    # If the left hand side is a Register index
     }, {
         CopyFromRegister(EqLhs())
     })
@@ -102,12 +106,37 @@ Def EvalRhs()
         # If the right hand side is an address
         IfElse(Is1("__RHSA"), {
             CopyFromRegister(EqRhs()) Addr() ReadHeap()
-        # If the right hand side is a register index
+        # If the right hand side is a Register index
         }, {
-            # Find the register
+            # Find the Register
             CopyFromRegister(EqRhs())
         })
     })
 End
 
-Def regHL() 0x01() End
+Def RegA() 0x01() End
+Def RegF() 0x11() End
+Def RegB() 0x02() End
+Def RegC() 0x12() End
+Def RegD() 0x03() End
+Def RegE() 0x13() End
+Def RegHL() 0x20() End
+Def RegSP() 0x21() End
+
+Def CopyFromA() CopyFrom("__A0", "__A1", "__A2", "__A3", "__A4", "__A5", "__A6", "__A7") End
+Def CopyFromF() CopyFrom("__F0", "__F1", "__F2", "__F3", "__F4", "__F5", "__F6", "__F7") End
+Def CopyFromB() CopyFrom("__B0", "__B1", "__B2", "__B3", "__B4", "__B5", "__B6", "__B7") End
+Def CopyFromC() CopyFrom("__C0", "__C1", "__C2", "__C3", "__C4", "__C5", "__C6", "__C7") End
+Def CopyFromD() CopyFrom("__D0", "__D1", "__D2", "__D3", "__D4", "__D5", "__D6", "__D7") End
+Def CopyFromE() CopyFrom("__E0", "__E1", "__E2", "__E3", "__E4", "__E5", "__E6", "__E7") End
+Def CopyFromHL() CopyFrom("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7") End
+Def CopyFromSP() CopyFrom("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7") End
+
+Def CopyToA() CopyTo("__A0", "__A1", "__A2", "__A3", "__A4", "__A5", "__A6", "__A7") End
+Def CopyToF() CopyTo("__F0", "__F1", "__F2", "__F3", "__F4", "__F5", "__F6", "__F7") End
+Def CopyToB() CopyTo("__B0", "__B1", "__B2", "__B3", "__B4", "__B5", "__B6", "__B7") End
+Def CopyToC() CopyTo("__C0", "__C1", "__C2", "__C3", "__C4", "__C5", "__C6", "__C7") End
+Def CopyToD() CopyTo("__D0", "__D1", "__D2", "__D3", "__D4", "__D5", "__D6", "__D7") End
+Def CopyToE() CopyTo("__E0", "__E1", "__E2", "__E3", "__E4", "__E5", "__E6", "__E7") End
+Def CopyToHL() CopyTo("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7") End
+Def CopyToSP() CopyTo("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7") End

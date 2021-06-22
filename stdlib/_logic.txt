@@ -4,7 +4,7 @@ End
 
 Def IfElse(Cond, BodyIf, BodyElse)
     FirstSuccessful {
-        If(BodyIf)
+        If(Cond, BodyIf)
         BodyElse
     }
 End

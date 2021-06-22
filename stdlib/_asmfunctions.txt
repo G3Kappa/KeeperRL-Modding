@@ -1,0 +1,5 @@
+Def print()
+    CopyFromHL() Addr()
+    ReadHeap() PrintASCII() IncAddr()
+End
+

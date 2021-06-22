@@ -1,7 +1,7 @@
 Def Copy(A, B)
   FirstSuccessful {
     Filter Is1(A) Write1(B)
-    Filter Is0(A) Write0(B)
+    Write0(B)
   }
 End
 

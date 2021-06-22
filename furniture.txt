@@ -1,8 +1,35 @@
+Def print()
+    CopyFromHL() Addr()
+    ReadHeap() PrintASCII() IncAddr()
+End
+
 Def Copy(A, B)
   FirstSuccessful {
     Filter Is1(A) Write1(B)
-    Filter Is0(A) Write0(B)
+    Write0(B)
   }
+End
+
+Def CopyTo(B0, B1, B2, B3, B4, B5, B6, B7)
+  Copy("bit0", B0)
+  Copy("bit1", B1)
+  Copy("bit2", B2)
+  Copy("bit3", B3)
+  Copy("bit4", B4)
+  Copy("bit5", B5)
+  Copy("bit6", B6)
+  Copy("bit7", B7)
+End
+
+Def CopyFrom(B0, B1, B2, B3, B4, B5, B6, B7)
+  Copy(B0, "bit0")
+  Copy(B1, "bit1")
+  Copy(B2, "bit2")
+  Copy(B3, "bit3")
+  Copy(B4, "bit4")
+  Copy(B5, "bit5")
+  Copy(B6, "bit6")
+  Copy(B7, "bit7")
 End
 
 Def Is0(X)
@@ -21,23 +48,27 @@ Def Write1(X)
   SetFlag X true
 End
 
-Def EqBits(A, B)
+Def Eq(A, B)
   Or { And { Is0(A) Is0(B) } And { Is1(A) Is1(B) } }
 End
 
-Def GteBits(A, B)
+Def EqBits(B0, B1, B2, B3, B4, B5, B6, B7)
+  And { Eq("bit0", B0) Eq("bit1", B1) Eq("bit2", B2) Eq("bit3", B3) Eq("bit4", B4) Eq("bit5", B5) Eq("bit6", B6) Eq("bit7", B7) }
+End
+
+Def Gte(A, B)
   Is1(A)
 End
 
-Def GtBits(A, B)
+Def Gt(A, B)
   And { Is1(A) Is0(B) }
 End
 
-Def LteBits(A, B)
+Def Lte(A, B)
   Is0(A)
 End
 
-Def LtBits(A, B)
+Def Lt(A, B)
   And { Is0(A) Is1(B) }
 End
 
@@ -682,28 +713,15 @@ Def WriteErrorStackUnderflow()
   Chain { 0x02() WriteError() }
 End
 Def Addr()
-  Chain {
-    Copy("bit0", "__a0")
-    Copy("bit1", "__a1")
-    Copy("bit2", "__a2")
-    Copy("bit3", "__a3")
-    Copy("bit4", "__a4")
-    Copy("bit5", "__a5")
-    Copy("bit6", "__a6")
-    Copy("bit7", "__a7")
-  }
+  CopyTo("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7")
 End
 
 Def IncAddr()
-  Increment("__a0", "__a1", "__a2", "__a3", "__a4", "__a5", "__a6", "__a7", "_heap_overflow")
-End
-
-Def DecAddr()
-  Decrement("__a0", "__a1", "__a2", "__a3", "__a4", "__a5", "__a6", "__a7", "_heap_overflow")
+  Increment("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7", "_heap_overflow")
 End
 
 Def WriteHeap()
-    Multiplex("__a0", "__a1", "__a2", "__a3", "__a4", "__a5", "__a6", "__a7",
+    Multiplex("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
         { Copy("bit0", "_heap00") Copy("bit1", "_heap01") Copy("bit2", "_heap02") Copy("bit3", "_heap03") Copy("bit4", "_heap04") Copy("bit5", "_heap05") Copy("bit6", "_heap06") Copy("bit7", "_heap07") },
         { Copy("bit0", "_heap10") Copy("bit1", "_heap11") Copy("bit2", "_heap12") Copy("bit3", "_heap13") Copy("bit4", "_heap14") Copy("bit5", "_heap15") Copy("bit6", "_heap16") Copy("bit7", "_heap17") },
         { Copy("bit0", "_heap20") Copy("bit1", "_heap21") Copy("bit2", "_heap22") Copy("bit3", "_heap23") Copy("bit4", "_heap24") Copy("bit5", "_heap25") Copy("bit6", "_heap26") Copy("bit7", "_heap27") },
@@ -964,7 +982,7 @@ Def WriteHeap()
 End
 
 Def ReadHeap()
-    Multiplex("__a0", "__a1", "__a2", "__a3", "__a4", "__a5", "__a6", "__a7",
+    Multiplex("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
         { Copy("_heap00", "bit0") Copy("_heap01", "bit1") Copy("_heap02", "bit2") Copy("_heap03", "bit3") Copy("_heap04", "bit4") Copy("_heap05", "bit5") Copy("_heap06", "bit6") Copy("_heap07", "bit7") },
         { Copy("_heap10", "bit0") Copy("_heap11", "bit1") Copy("_heap12", "bit2") Copy("_heap13", "bit3") Copy("_heap14", "bit4") Copy("_heap15", "bit5") Copy("_heap16", "bit6") Copy("_heap17", "bit7") },
         { Copy("_heap20", "bit0") Copy("_heap21", "bit1") Copy("_heap22", "bit2") Copy("_heap23", "bit3") Copy("_heap24", "bit4") Copy("_heap25", "bit5") Copy("_heap26", "bit6") Copy("_heap27", "bit7") },
@@ -1520,7 +1538,7 @@ Def PrintASCII()
     Message "?",
     Message " ",
     Message "!",
-    Message """,
+    Message "?",
     Message "#",
     Message "$",
     Message "%",
@@ -1578,7 +1596,7 @@ Def PrintASCII()
     Message "Y",
     Message "Z",
     Message "[",
-    Message "\",
+    Message "?",
     Message "]",
     Message "^",
     Message "_",
@@ -1750,48 +1768,177 @@ End
 
 Def IfElse(Cond, BodyIf, BodyElse)
     FirstSuccessful {
-        If(BodyIf)
+        If(Cond, BodyIf)
         BodyElse
     }
 End
-Def Ld(
-  A0, A1, A2, A3, A4, A5, A6, A7,
-  B0, B1, B2, B3, B4, B5, B6, B7
-)
-  Copy(B0, A0)
-  Copy(B1, A1)
-  Copy(B2, A2)
-  Copy(B3, A3)
-  Copy(B4, A4)
-  Copy(B5, A5)
-  Copy(B6, A6)
-  Copy(B7, A7)
+Def LD()
+    # If the left hand side is an address
+    IfElse(Is1("__LHSA"), {
+        CopyFromRegister(EqLhs()) Addr()
+        EvalRhs() WriteHeap()
+    # If the left hand side is a Register index
+    }, {
+        CopyToRegister(EqLhs(), EvalRhs())
+    })
 End
 
-Def Add()
-  Chain {
-    Write0("0")
-    PopBits("A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7")
-    PopBits("B0", "B1", "B2", "B3", "B4", "B5", "B6", "B7")
-    AddBits("A0", "B0",  "0", "bit0", "C1")
-    AddBits("A1", "B1", "C1", "bit1", "C2")
-    AddBits("A2", "B2", "C2", "bit2", "C3")
-    AddBits("A3", "B3", "C3", "bit3", "C4")
-    AddBits("A4", "B4", "C4", "bit4", "C5")
-    AddBits("A5", "B5", "C5", "bit5", "C6")
-    AddBits("A5", "B5", "C5", "bit5", "C6")
-    AddBits("A7", "B7", "C7", "bit7", "C8")
-    Push()
-  }
-End
-Def rA()
-Chain { "__rA0", "__rA1", "__rA2", "__rA3", "__rA4", "__rA5", "__rA6", "__rA7" }
+Def EX()
+    EvalLhs() CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+    EvalRhs() CopyToLhs()
+    CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7") CopyToRhs()
 End
 
-Def rB()
-Chain { "__rB0", "__rB1", "__rB2", "__rB3", "__rB4", "__rB5", "__rB6", "__rB7" }
+Def PUSH()
+    CopyFromRegister(EqLhs()) PushStack()
 End
-Def Push()
+
+Def POP()
+    PopStack() CopyToRegister(EqLhs())
+End
+Def Lhs() Chain {
+    Write0("__LHSA")
+    CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+} End
+
+Def LhsAddr() Chain {
+    Write1("__LHSA")
+    CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+} End
+
+Def Rhs() Chain {
+    Write0("__RHSA")
+    Write0("__RHSD")
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+} End
+
+Def RhsAddr() Chain {
+    Write1("__RHSA")
+    Write0("__RHSD")
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+} End
+
+Def RhsData() Chain {
+    Write0("__RHSA")
+    Write1("__RHSD")
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+} End
+
+Def EqLhs()
+    EqBits("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+End
+
+Def EqRhs()
+    EqBits("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+End
+
+Def CopyFromLhs()
+    CopyFrom("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+End
+
+Def CopyFromRhs()
+    CopyFrom("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+End
+
+Def CopyToLhs()
+    IfElse(Is1("__LHSA"), {
+        CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        CopyFromLhs() Addr()
+        CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        WriteHeap()
+    }, {
+        CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+    })
+End
+
+Def CopyToRhs()
+    IfElse(Is1("__RHSA"), {
+        CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        CopyFromRhs() Addr()
+        CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        WriteHeap()
+    }, {
+        CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+    })
+End
+
+Def CopyToRegister(Predicate, Body)
+    FirstSuccessful {
+        ChainUntilFail {  RegA() If(Predicate, { Body  CopyToA()  }) }
+        ChainUntilFail {  RegB() If(Predicate, { Body  CopyToB()  }) }
+        ChainUntilFail {  RegC() If(Predicate, { Body  CopyToC()  }) }
+        ChainUntilFail {  RegD() If(Predicate, { Body  CopyToD()  }) }
+        ChainUntilFail {  RegE() If(Predicate, { Body  CopyToE()  }) }
+        ChainUntilFail { RegHL() If(Predicate, { Body CopyToHL()  }) }
+        ChainUntilFail { RegSP() If(Predicate, { Body CopyToSP()  }) }
+    }
+End
+
+Def CopyFromRegister(Predicate)
+    FirstSuccessful {
+        ChainUntilFail {  RegA() If(Predicate, {  CopyFromA()  }) }
+        ChainUntilFail {  RegB() If(Predicate, {  CopyFromB()  }) }
+        ChainUntilFail {  RegC() If(Predicate, {  CopyFromC()  }) }
+        ChainUntilFail {  RegD() If(Predicate, {  CopyFromD()  }) }
+        ChainUntilFail {  RegE() If(Predicate, {  CopyFromE()  }) }
+        ChainUntilFail { RegHL() If(Predicate, { CopyFromHL()  }) }
+        ChainUntilFail { RegSP() If(Predicate, { CopyFromSP()  }) }
+    }
+End
+
+Def EvalLhs()
+    # If the left hand side is an address
+    IfElse(Is1("__LHSA"), {
+        CopyFromRegister(EqLhs()) Addr() ReadHeap()
+    # If the left hand side is a Register index
+    }, {
+        CopyFromRegister(EqLhs())
+    })
+End
+
+Def EvalRhs()
+    # If the right hand side is plain data
+    IfElse(Is1("__RHSD"), {
+        CopyFromRhs()
+    }, {
+        # If the right hand side is an address
+        IfElse(Is1("__RHSA"), {
+            CopyFromRegister(EqRhs()) Addr() ReadHeap()
+        # If the right hand side is a Register index
+        }, {
+            # Find the Register
+            CopyFromRegister(EqRhs())
+        })
+    })
+End
+
+Def RegA() 0x01() End
+Def RegF() 0x11() End
+Def RegB() 0x02() End
+Def RegC() 0x12() End
+Def RegD() 0x03() End
+Def RegE() 0x13() End
+Def RegHL() 0x20() End
+Def RegSP() 0x21() End
+
+Def CopyFromA() CopyFrom("__A0", "__A1", "__A2", "__A3", "__A4", "__A5", "__A6", "__A7") End
+Def CopyFromF() CopyFrom("__F0", "__F1", "__F2", "__F3", "__F4", "__F5", "__F6", "__F7") End
+Def CopyFromB() CopyFrom("__B0", "__B1", "__B2", "__B3", "__B4", "__B5", "__B6", "__B7") End
+Def CopyFromC() CopyFrom("__C0", "__C1", "__C2", "__C3", "__C4", "__C5", "__C6", "__C7") End
+Def CopyFromD() CopyFrom("__D0", "__D1", "__D2", "__D3", "__D4", "__D5", "__D6", "__D7") End
+Def CopyFromE() CopyFrom("__E0", "__E1", "__E2", "__E3", "__E4", "__E5", "__E6", "__E7") End
+Def CopyFromHL() CopyFrom("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7") End
+Def CopyFromSP() CopyFrom("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7") End
+
+Def CopyToA() CopyTo("__A0", "__A1", "__A2", "__A3", "__A4", "__A5", "__A6", "__A7") End
+Def CopyToF() CopyTo("__F0", "__F1", "__F2", "__F3", "__F4", "__F5", "__F6", "__F7") End
+Def CopyToB() CopyTo("__B0", "__B1", "__B2", "__B3", "__B4", "__B5", "__B6", "__B7") End
+Def CopyToC() CopyTo("__C0", "__C1", "__C2", "__C3", "__C4", "__C5", "__C6", "__C7") End
+Def CopyToD() CopyTo("__D0", "__D1", "__D2", "__D3", "__D4", "__D5", "__D6", "__D7") End
+Def CopyToE() CopyTo("__E0", "__E1", "__E2", "__E3", "__E4", "__E5", "__E6", "__E7") End
+Def CopyToHL() CopyTo("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7") End
+Def CopyToSP() CopyTo("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7") End
+Def PushStack()
   Chain {
     FirstSuccessful {
       Chain {
@@ -2073,11 +2220,11 @@ Def PushBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
     Copy(Copy5, "bit5")
     Copy(Copy6, "bit6")
     Copy(Copy7, "bit7")
-    Push()
+    PushStack()
   }
 End
 
-Def Pop()
+Def PopStack()
   Chain {
     FirstSuccessful {
       Chain {
@@ -2351,7 +2498,7 @@ End
 
 Def PopBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
   Chain {
-    Pop()
+    PopStack()
     Copy("bit0", Copy0)
     Copy("bit1", Copy1)
     Copy("bit2", Copy2)
@@ -2363,69 +2510,16 @@ Def PopBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
   }
 End
 
-"PUSH_TO_STACK" inherit "GROUND_TORCH"
+"TEST_FURNITURE" inherit "GROUND_TORCH"
 {
   name = "push to stack"
   viewId = { "electric_torch_off" }
   tickType = Effect Chain {
-    Ld(rA(), rB())
+    0x00() CopyToHL() RegHL() LhsAddr()
+    0xF0() CopyToA() RegA() Rhs()
+    LD()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
 }
-"POP_FROM_STACK" inherit "GROUND_TORCH" 
-{ 
-  name = "pop from stack"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Pop()
-    Message "Popped"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_0" inherit "GROUND_TORCH" 
-{ 
-  name = "write 0"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    0x00()
-    Message "Wrote 0 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"WRITE_1" inherit "GROUND_TORCH" 
-{ 
-  name = "write 1"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    0x01()
-    Message "Wrote 1 to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"ADD" inherit "GROUND_TORCH" 
-{ 
-  name = "add"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Add()
-    Message "Added 2 items"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-"PRINT" inherit "GROUND_TORCH" 
-{ 
-  name = "print"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    PrintDecimal()
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
-
 
