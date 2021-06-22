@@ -4,7 +4,7 @@
   name = "push to stack"
   viewId = { "electric_torch_off" }
   tickType = Effect Chain {
-    Push()
+    Ld(rA(), rB())
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
