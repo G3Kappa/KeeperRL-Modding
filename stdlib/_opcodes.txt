@@ -14,3 +14,11 @@ Def ex()
     EvalRhs() CopyToLhs()
     CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7") CopyToRhs()
 End
+
+Def push()
+    CopyFromRegister(EqLhs()) PushStack()
+End
+
+Def pop()
+    PopStack() CopyToRegister(EqLhs())
+End
