@@ -1,7 +1,113 @@
-Def rA()
-    "#A0", "#A1", "#A2", "#A3", "#A4", "#A5", "#A6", "#A7"
+Def Lhs() Chain {
+    Write0("__LHSA")
+    CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+} End
+
+Def LhsAddr() Chain {
+    Write1("__LHSA")
+    CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+} End
+
+Def Rhs() Chain {
+    Write0("__RHSA")
+    Write0("__RHSD")
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+} End
+
+Def RhsAddr() Chain {
+    Write1("__RHSA")
+    Write0("__RHSD")
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+} End
+
+Def RhsData() Chain {
+    Write0("__RHSA")
+    Write1("__RHSD")
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+} End
+
+Def EqLhs()
+    EqBits("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
 End
 
-Def rB()
-    "#B0", "#B1", "#B2", "#B3", "#B4", "#B5", "#B6", "#B7"
+Def EqRhs()
+    EqBits("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
 End
+
+Def CopyFromLhs()
+    CopyFrom("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+End
+
+Def CopyFromRhs()
+    CopyFrom("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+End
+
+Def CopyToLhs()
+    IfElse(Is1("__LHSA"), {
+        CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        CopyFromLhs() Addr()
+        CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        WriteHeap()
+    }, {
+        CopyTo("__LHS0", "__LHS1", "__LHS2", "__LHS3", "__LHS4", "__LHS5", "__LHS6", "__LHS7")
+    })
+End
+
+Def CopyToRhs()
+    IfElse(Is1("__RHSA"), {
+        CopyTo("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        CopyFromRhs() Addr()
+        CopyFrom("_tmp0", "_tmp1", "_tmp2", "_tmp3", "_tmp4", "_tmp5", "_tmp6", "_tmp7")
+        WriteHeap()
+    }, {
+        CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+    })
+End
+
+Def CopyFromRhs()
+    CopyTo("__RHS0", "__RHS1", "__RHS2", "__RHS3", "__RHS4", "__RHS5", "__RHS6", "__RHS7")
+End
+
+Def CopyToRegister(Predicate, Body)
+    FirstSuccessful {
+        If(regHL() Predicate, {
+            Body CopyTo("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7")
+        })
+    }
+End
+
+Def CopyFromRegister(Predicate)
+    FirstSuccessful {
+        If(regHL() Predicate, {
+            CopyFrom("__HL0", "__HL1", "__HL2", "__HL3", "__HL4", "__HL5", "__HL6", "__HL7")
+        })
+    }
+End
+
+Def EvalLhs()
+    # If the left hand side is an address
+    IfElse(Is1("__LHSA"), {
+        CopyFromRegister(EqLhs()) Addr() ReadHeap()
+    # If the left hand side is a register index
+    }, {
+        CopyFromRegister(EqLhs())
+    })
+End
+
+Def EvalRhs()
+    # If the right hand side is plain data
+    IfElse(Is1("__RHSD"), {
+        CopyFromRhs()
+    }, {
+        # If the right hand side is an address
+        IfElse(Is1("__RHSA"), {
+            CopyFromRegister(EqRhs()) Addr() ReadHeap()
+        # If the right hand side is a register index
+        }, {
+            # Find the register
+            CopyFromRegister(EqRhs())
+        })
+    })
+End
+
+Def regHL() 0x01() End

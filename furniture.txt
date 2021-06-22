@@ -1,443 +1,3 @@
-
-Def NULL() Chain {
-    IncAddr()
-    0x0()
-    WriteHeap()
-} End
-
-Def 0() Chain {
-    IncAddr()
-    0x30()
-    WriteHeap()
-} End
-
-
-Def 1() Chain {
-    IncAddr()
-    0x31()
-    WriteHeap()
-} End
-
-
-Def 2() Chain {
-    IncAddr()
-    0x32()
-    WriteHeap()
-} End
-
-
-Def 3() Chain {
-    IncAddr()
-    0x33()
-    WriteHeap()
-} End
-
-
-Def 4() Chain {
-    IncAddr()
-    0x34()
-    WriteHeap()
-} End
-
-
-Def 5() Chain {
-    IncAddr()
-    0x35()
-    WriteHeap()
-} End
-
-
-Def 6() Chain {
-    IncAddr()
-    0x36()
-    WriteHeap()
-} End
-
-
-Def 7() Chain {
-    IncAddr()
-    0x37()
-    WriteHeap()
-} End
-
-
-Def 8() Chain {
-    IncAddr()
-    0x38()
-    WriteHeap()
-} End
-
-
-Def 9() Chain {
-    IncAddr()
-    0x39()
-    WriteHeap()
-} End
-
-
-
-Def A() Chain {
-    IncAddr()
-    0x41()
-    WriteHeap()
-} End
-
-
-Def B() Chain {
-    IncAddr()
-    0x42()
-    WriteHeap()
-} End
-
-
-Def C() Chain {
-    IncAddr()
-    0x43()
-    WriteHeap()
-} End
-
-
-Def D() Chain {
-    IncAddr()
-    0x44()
-    WriteHeap()
-} End
-
-
-Def E() Chain {
-    IncAddr()
-    0x45()
-    WriteHeap()
-} End
-
-
-Def F() Chain {
-    IncAddr()
-    0x46()
-    WriteHeap()
-} End
-
-
-Def G() Chain {
-    IncAddr()
-    0x47()
-    WriteHeap()
-} End
-
-
-Def H() Chain {
-    IncAddr()
-    0x48()
-    WriteHeap()
-} End
-
-
-Def I() Chain {
-    IncAddr()
-    0x49()
-    WriteHeap()
-} End
-
-
-Def J() Chain {
-    IncAddr()
-    0x4A()
-    WriteHeap()
-} End
-
-
-Def K() Chain {
-    IncAddr()
-    0x4B()
-    WriteHeap()
-} End
-
-
-Def L() Chain {
-    IncAddr()
-    0x4C()
-    WriteHeap()
-} End
-
-
-Def M() Chain {
-    IncAddr()
-    0x4D()
-    WriteHeap()
-} End
-
-
-Def N() Chain {
-    IncAddr()
-    0x4E()
-    WriteHeap()
-} End
-
-
-Def O() Chain {
-    IncAddr()
-    0x4F()
-    WriteHeap()
-} End
-
-
-Def P() Chain {
-    IncAddr()
-    0x50()
-    WriteHeap()
-} End
-
-
-Def Q() Chain {
-    IncAddr()
-    0x51()
-    WriteHeap()
-} End
-
-
-Def R() Chain {
-    IncAddr()
-    0x52()
-    WriteHeap()
-} End
-
-
-Def S() Chain {
-    IncAddr()
-    0x53()
-    WriteHeap()
-} End
-
-
-Def T() Chain {
-    IncAddr()
-    0x54()
-    WriteHeap()
-} End
-
-
-Def U() Chain {
-    IncAddr()
-    0x55()
-    WriteHeap()
-} End
-
-
-Def V() Chain {
-    IncAddr()
-    0x56()
-    WriteHeap()
-} End
-
-
-Def W() Chain {
-    IncAddr()
-    0x57()
-    WriteHeap()
-} End
-
-
-Def X() Chain {
-    IncAddr()
-    0x58()
-    WriteHeap()
-} End
-
-
-Def Y() Chain {
-    IncAddr()
-    0x59()
-    WriteHeap()
-} End
-
-
-Def Z() Chain {
-    IncAddr()
-    0x5A()
-    WriteHeap()
-} End
-
-
-Def a() Chain {
-    IncAddr()
-    0x61()
-    WriteHeap()
-} End
-
-
-Def b() Chain {
-    IncAddr()
-    0x62()
-    WriteHeap()
-} End
-
-
-Def c() Chain {
-    IncAddr()
-    0x63()
-    WriteHeap()
-} End
-
-
-Def d() Chain {
-    IncAddr()
-    0x64()
-    WriteHeap()
-} End
-
-
-Def e() Chain {
-    IncAddr()
-    0x65()
-    WriteHeap()
-} End
-
-
-Def f() Chain {
-    IncAddr()
-    0x66()
-    WriteHeap()
-} End
-
-
-Def g() Chain {
-    IncAddr()
-    0x67()
-    WriteHeap()
-} End
-
-
-Def h() Chain {
-    IncAddr()
-    0x68()
-    WriteHeap()
-} End
-
-
-Def i() Chain {
-    IncAddr()
-    0x69()
-    WriteHeap()
-} End
-
-
-Def j() Chain {
-    IncAddr()
-    0x6A()
-    WriteHeap()
-} End
-
-
-Def k() Chain {
-    IncAddr()
-    0x6B()
-    WriteHeap()
-} End
-
-
-Def l() Chain {
-    IncAddr()
-    0x6C()
-    WriteHeap()
-} End
-
-
-Def m() Chain {
-    IncAddr()
-    0x6D()
-    WriteHeap()
-} End
-
-
-Def n() Chain {
-    IncAddr()
-    0x6E()
-    WriteHeap()
-} End
-
-
-Def o() Chain {
-    IncAddr()
-    0x6F()
-    WriteHeap()
-} End
-
-
-Def p() Chain {
-    IncAddr()
-    0x70()
-    WriteHeap()
-} End
-
-
-Def q() Chain {
-    IncAddr()
-    0x71()
-    WriteHeap()
-} End
-
-
-Def r() Chain {
-    IncAddr()
-    0x72()
-    WriteHeap()
-} End
-
-
-Def s() Chain {
-    IncAddr()
-    0x73()
-    WriteHeap()
-} End
-
-
-Def t() Chain {
-    IncAddr()
-    0x74()
-    WriteHeap()
-} End
-
-
-Def u() Chain {
-    IncAddr()
-    0x75()
-    WriteHeap()
-} End
-
-
-Def v() Chain {
-    IncAddr()
-    0x76()
-    WriteHeap()
-} End
-
-
-Def w() Chain {
-    IncAddr()
-    0x77()
-    WriteHeap()
-} End
-
-
-Def x() Chain {
-    IncAddr()
-    0x78()
-    WriteHeap()
-} End
-
-
-Def y() Chain {
-    IncAddr()
-    0x79()
-    WriteHeap()
-} End
-
-
-Def z() Chain {
-    IncAddr()
-    0x7A()
-    WriteHeap()
-} End
 Def Copy(A, B)
   FirstSuccessful {
     Filter Is1(A) Write1(B)
@@ -836,22 +396,22 @@ Def Multiplex(
   }
 End
 
-Def 0x0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x00() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x01() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x02() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x03() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x04() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x05() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x06() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x07() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x08() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x09() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
 Def 0x10() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
 Def 0x11() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
 Def 0x12() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
@@ -1115,11 +675,11 @@ Def ClearError()
 End
 
 Def WriteErrorStackOverflow()
-  Chain { 0x1() WriteError() }
+  Chain { 0x01() WriteError() }
 End
 
 Def WriteErrorStackUnderflow()
-  Chain { 0x2() WriteError() }
+  Chain { 0x02() WriteError() }
 End
 Def Addr()
   Chain {
@@ -2225,12 +1785,13 @@ Def Add()
   }
 End
 Def rA()
-    "#A0", "#A1", "#A2", "#A3", "#A4", "#A5", "#A6", "#A7"
+Chain { "__rA0", "__rA1", "__rA2", "__rA3", "__rA4", "__rA5", "__rA6", "__rA7" }
 End
 
 Def rB()
-    "#B0", "#B1", "#B2", "#B3", "#B4", "#B5", "#B6", "#B7"
-EndDef Push()
+Chain { "__rB0", "__rB1", "__rB2", "__rB3", "__rB4", "__rB5", "__rB6", "__rB7" }
+End
+Def Push()
   Chain {
     FirstSuccessful {
       Chain {
@@ -2807,7 +2368,7 @@ End
   name = "push to stack"
   viewId = { "electric_torch_off" }
   tickType = Effect Chain {
-    # Ld(rA(), rB())
+    Ld(rA(), rB())
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
@@ -2828,7 +2389,7 @@ End
   name = "write 0"
   viewId = { "electric_torch_off" }
   usageType = UsageEffect "" Chain {
-    X0()
+    0x00()
     Message "Wrote 0 to active memory"
   }
   canBuildOutsideOfTerritory = true
@@ -2839,7 +2400,7 @@ End
   name = "write 1"
   viewId = { "electric_torch_off" }
   usageType = UsageEffect "" Chain {
-    X1()
+    0x01()
     Message "Wrote 1 to active memory"
   }
   canBuildOutsideOfTerritory = true
@@ -2861,7 +2422,7 @@ End
   name = "print"
   viewId = { "electric_torch_off" }
   usageType = UsageEffect "" Chain {
-    Print()
+    PrintDecimal()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true

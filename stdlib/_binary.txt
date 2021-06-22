@@ -5,6 +5,28 @@ Def Copy(A, B)
   }
 End
 
+Def CopyTo(B0, B1, B2, B3, B4, B5, B6, B7)
+  Copy("bit0", B0)
+  Copy("bit1", B1)
+  Copy("bit2", B2)
+  Copy("bit3", B3)
+  Copy("bit4", B4)
+  Copy("bit5", B5)
+  Copy("bit6", B6)
+  Copy("bit7", B7)
+End
+
+Def CopyFrom(B0, B1, B2, B3, B4, B5, B6, B7)
+  Copy(B0, "bit0")
+  Copy(B1, "bit1")
+  Copy(B2, "bit2")
+  Copy(B3, "bit3")
+  Copy(B4, "bit4")
+  Copy(B5, "bit5")
+  Copy(B6, "bit6")
+  Copy(B7, "bit7")
+End
+
 Def Is0(X)
   Not Flag X
 End
@@ -21,23 +43,27 @@ Def Write1(X)
   SetFlag X true
 End
 
-Def EqBits(A, B)
+Def Eq(A, B)
   Or { And { Is0(A) Is0(B) } And { Is1(A) Is1(B) } }
 End
 
-Def GteBits(A, B)
+Def EqBits(B0, B1, B2, B3, B4, B5, B6, B7)
+  And { Eq("bit0", B0) Eq("bit1", B1) Eq("bit2", B2) Eq("bit3", B3) Eq("bit4", B4) Eq("bit5", B5) Eq("bit6", B6) Eq("bit7", B7) }
+End
+
+Def Gte(A, B)
   Is1(A)
 End
 
-Def GtBits(A, B)
+Def Gt(A, B)
   And { Is1(A) Is0(B) }
 End
 
-Def LteBits(A, B)
+Def Lte(A, B)
   Is0(A)
 End
 
-Def LtBits(A, B)
+Def Lt(A, B)
   And { Is0(A) Is1(B) }
 End
 
@@ -396,22 +422,22 @@ Def Multiplex(
   }
 End
 
-Def 0x0() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x1() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x2() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x3() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x4() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x5() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x6() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x7() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x8() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0x9() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xA() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xB() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xC() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xD() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xE() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
-Def 0xF() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x00() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x01() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x02() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x03() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x04() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x05() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x06() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x07() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write0("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x08() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x09() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0A() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0B() Chain { Write1("bit0") Write1("bit1") Write0("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0C() Chain { Write0("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0D() Chain { Write1("bit0") Write0("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0E() Chain { Write0("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
+Def 0x0F() Chain { Write1("bit0") Write1("bit1") Write1("bit2") Write1("bit3") Write0("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
 Def 0x10() Chain { Write0("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
 Def 0x11() Chain { Write1("bit0") Write0("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End
 Def 0x12() Chain { Write0("bit0") Write1("bit1") Write0("bit2") Write0("bit3") Write1("bit4") Write0("bit5") Write0("bit6") Write0("bit7")} End

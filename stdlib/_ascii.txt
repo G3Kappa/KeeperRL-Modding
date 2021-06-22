@@ -1,10 +1,3 @@
-
-Def NULL() Chain {
-    IncAddr()
-    0x0()
-    WriteHeap()
-} End
-
 Def 0() Chain {
     IncAddr()
     0x30()
@@ -438,3 +431,102 @@ Def z() Chain {
     0x7A()
     WriteHeap()
 } End
+
+Def space() Chain {
+    IncAddr()
+    0x20()
+    WriteHeap()
+} End
+
+Def exclamation() Chain {
+    IncAddr()
+    0x21()
+    WriteHeap()
+} End
+
+Def quotes() Chain {
+    IncAddr()
+    0x22()
+    WriteHeap()
+} End
+
+Def pound() Chain {
+    IncAddr()
+    0x23()
+    WriteHeap()
+} End
+
+Def dollar() Chain {
+    IncAddr()
+    0x24()
+    WriteHeap()
+} End
+
+Def percent() Chain {
+    IncAddr()
+    0x25()
+    WriteHeap()
+} End
+
+Def ampersand() Chain {
+    IncAddr()
+    0x26()
+    WriteHeap()
+} End
+
+Def apostrophe() Chain {
+    IncAddr()
+    0x27()
+    WriteHeap()
+} End
+
+Def oparen() Chain {
+    IncAddr()
+    0x28()
+    WriteHeap()
+} End
+
+Def cparen() Chain {
+    IncAddr()
+    0x29()
+    WriteHeap()
+} End
+
+Def asterisk() Chain {
+    IncAddr()
+    0x2A()
+    WriteHeap()
+} End
+
+Def plus() Chain {
+    IncAddr()
+    0x2B()
+    WriteHeap()
+} End
+
+Def comma() Chain {
+    IncAddr()
+    0x2C()
+    WriteHeap()
+} End
+
+Def dash() Chain {
+    IncAddr()
+    0x2D()
+    WriteHeap()
+} End
+
+Def minus() dash() End
+
+Def period() Chain {
+    IncAddr()
+    0x2E()
+    WriteHeap()
+} End
+
+Def slash() Chain {
+    IncAddr()
+    0x2F()
+    WriteHeap()
+} End
+

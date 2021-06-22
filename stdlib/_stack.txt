@@ -1,4 +1,4 @@
-Def Push()
+Def push()
   Chain {
     FirstSuccessful {
       Chain {
@@ -280,11 +280,11 @@ Def PushBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
     Copy(Copy5, "bit5")
     Copy(Copy6, "bit6")
     Copy(Copy7, "bit7")
-    Push()
+    push()
   }
 End
 
-Def Pop()
+Def pop()
   Chain {
     FirstSuccessful {
       Chain {
@@ -558,7 +558,7 @@ End
 
 Def PopBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
   Chain {
-    Pop()
+    pop()
     Copy("bit0", Copy0)
     Copy("bit1", Copy1)
     Copy("bit2", Copy2)
