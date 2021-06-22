@@ -145,7 +145,7 @@ Def AddBits(A, B, C, S, Carry)
   }
 End
 
-Def Multiplex(
+Def Demux(
   Bit0, Bit1, Bit2, Bit3, Bit4, Bit5, Bit6, Bit7, 
   M0, M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16, 
   M17, M18, M19, M20, M21, M22, M23, M24, M25, M26, M27, M28, M29, M30, M31, M32, 
@@ -721,7 +721,7 @@ Def IncAddr()
 End
 
 Def WriteHeap()
-    Multiplex("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
+    Demux("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
         { Copy("bit0", "_heap00") Copy("bit1", "_heap01") Copy("bit2", "_heap02") Copy("bit3", "_heap03") Copy("bit4", "_heap04") Copy("bit5", "_heap05") Copy("bit6", "_heap06") Copy("bit7", "_heap07") },
         { Copy("bit0", "_heap10") Copy("bit1", "_heap11") Copy("bit2", "_heap12") Copy("bit3", "_heap13") Copy("bit4", "_heap14") Copy("bit5", "_heap15") Copy("bit6", "_heap16") Copy("bit7", "_heap17") },
         { Copy("bit0", "_heap20") Copy("bit1", "_heap21") Copy("bit2", "_heap22") Copy("bit3", "_heap23") Copy("bit4", "_heap24") Copy("bit5", "_heap25") Copy("bit6", "_heap26") Copy("bit7", "_heap27") },
@@ -982,7 +982,7 @@ Def WriteHeap()
 End
 
 Def ReadHeap()
-    Multiplex("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
+    Demux("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
         { Copy("_heap00", "bit0") Copy("_heap01", "bit1") Copy("_heap02", "bit2") Copy("_heap03", "bit3") Copy("_heap04", "bit4") Copy("_heap05", "bit5") Copy("_heap06", "bit6") Copy("_heap07", "bit7") },
         { Copy("_heap10", "bit0") Copy("_heap11", "bit1") Copy("_heap12", "bit2") Copy("_heap13", "bit3") Copy("_heap14", "bit4") Copy("_heap15", "bit5") Copy("_heap16", "bit6") Copy("_heap17", "bit7") },
         { Copy("_heap20", "bit0") Copy("_heap21", "bit1") Copy("_heap22", "bit2") Copy("_heap23", "bit3") Copy("_heap24", "bit4") Copy("_heap25", "bit5") Copy("_heap26", "bit6") Copy("_heap27", "bit7") },
@@ -1242,7 +1242,7 @@ Def ReadHeap()
     )
 End
 Def PrintDecimal()
-  Multiplex("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
+  Demux("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
     Message "0",
     Message "1",
     Message "2",
@@ -1503,7 +1503,7 @@ Def PrintDecimal()
 End
 
 Def PrintASCII()
-  Multiplex("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
+  Demux("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
     Message "?",
     Message "?",
     Message "?",
@@ -1942,7 +1942,7 @@ Def PushStack()
   Chain {
     FirstSuccessful {
       Chain {
-        Multiplex("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
+        Demux("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
           { Copy("bit0", "_stack00") Copy("bit1", "_stack01") Copy("bit2", "_stack02") Copy("bit3", "_stack03") Copy("bit4", "_stack04") Copy("bit5", "_stack05") Copy("bit6", "_stack06") Copy("bit7", "_stack07") },
           { Copy("bit0", "_stack10") Copy("bit1", "_stack11") Copy("bit2", "_stack12") Copy("bit3", "_stack13") Copy("bit4", "_stack14") Copy("bit5", "_stack15") Copy("bit6", "_stack16") Copy("bit7", "_stack17") },
           { Copy("bit0", "_stack20") Copy("bit1", "_stack21") Copy("bit2", "_stack22") Copy("bit3", "_stack23") Copy("bit4", "_stack24") Copy("bit5", "_stack25") Copy("bit6", "_stack26") Copy("bit7", "_stack27") },
@@ -2233,7 +2233,7 @@ Def PopStack()
           Message "stack underflow"
           WriteErrorStackUnderflow()
         }
-        Multiplex("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
+        Demux("__SP0", "__SP1", "__SP2", "__SP3", "__SP4", "__SP5", "__SP6", "__SP7",
           { Copy("_stack00", "bit0") Copy("_stack01", "bit1") Copy("_stack02", "bit2") Copy("_stack03", "bit3") Copy("_stack04", "bit4") Copy("_stack05", "bit5") Copy("_stack06", "bit6") Copy("_stack07", "bit7") },
           { Copy("_stack10", "bit0") Copy("_stack11", "bit1") Copy("_stack12", "bit2") Copy("_stack13", "bit3") Copy("_stack14", "bit4") Copy("_stack15", "bit5") Copy("_stack16", "bit6") Copy("_stack17", "bit7") },
           { Copy("_stack20", "bit0") Copy("_stack21", "bit1") Copy("_stack22", "bit2") Copy("_stack23", "bit3") Copy("_stack24", "bit4") Copy("_stack25", "bit5") Copy("_stack26", "bit6") Copy("_stack27", "bit7") },

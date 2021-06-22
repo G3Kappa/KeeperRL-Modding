@@ -7,7 +7,7 @@ Def IncAddr()
 End
 
 Def WriteHeap()
-    Multiplex("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
+    Demux("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
         { Copy("bit0", "_heap00") Copy("bit1", "_heap01") Copy("bit2", "_heap02") Copy("bit3", "_heap03") Copy("bit4", "_heap04") Copy("bit5", "_heap05") Copy("bit6", "_heap06") Copy("bit7", "_heap07") },
         { Copy("bit0", "_heap10") Copy("bit1", "_heap11") Copy("bit2", "_heap12") Copy("bit3", "_heap13") Copy("bit4", "_heap14") Copy("bit5", "_heap15") Copy("bit6", "_heap16") Copy("bit7", "_heap17") },
         { Copy("bit0", "_heap20") Copy("bit1", "_heap21") Copy("bit2", "_heap22") Copy("bit3", "_heap23") Copy("bit4", "_heap24") Copy("bit5", "_heap25") Copy("bit6", "_heap26") Copy("bit7", "_heap27") },
@@ -268,7 +268,7 @@ Def WriteHeap()
 End
 
 Def ReadHeap()
-    Multiplex("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
+    Demux("__ADDR0", "__ADDR1", "__ADDR2", "__ADDR3", "__ADDR4", "__ADDR5", "__ADDR6", "__ADDR7",
         { Copy("_heap00", "bit0") Copy("_heap01", "bit1") Copy("_heap02", "bit2") Copy("_heap03", "bit3") Copy("_heap04", "bit4") Copy("_heap05", "bit5") Copy("_heap06", "bit6") Copy("_heap07", "bit7") },
         { Copy("_heap10", "bit0") Copy("_heap11", "bit1") Copy("_heap12", "bit2") Copy("_heap13", "bit3") Copy("_heap14", "bit4") Copy("_heap15", "bit5") Copy("_heap16", "bit6") Copy("_heap17", "bit7") },
         { Copy("_heap20", "bit0") Copy("_heap21", "bit1") Copy("_heap22", "bit2") Copy("_heap23", "bit3") Copy("_heap24", "bit4") Copy("_heap25", "bit5") Copy("_heap26", "bit6") Copy("_heap27", "bit7") },

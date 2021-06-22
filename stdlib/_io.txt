@@ -1,5 +1,5 @@
 Def PrintDecimal()
-  Multiplex("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
+  Demux("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
     Message "0",
     Message "1",
     Message "2",
@@ -260,7 +260,7 @@ Def PrintDecimal()
 End
 
 Def PrintASCII()
-  Multiplex("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
+  Demux("bit0", "bit1", "bit2", "bit3", "bit4", "bit5", "bit6", "bit7", 
     Message "?",
     Message "?",
     Message "?",

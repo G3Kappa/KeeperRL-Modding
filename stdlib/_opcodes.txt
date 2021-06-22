@@ -16,9 +16,9 @@ Def EX()
 End
 
 Def PUSH()
-    CopyFromRegister(EqLhs()) PushStack()
+    CopyFromRegister(EqRhs()) PushStack()
 End
 
 Def POP()
-    PopStack() CopyToRegister(EqLhs())
+    PopStack() CopyToRegister(EqRhs())
 End
