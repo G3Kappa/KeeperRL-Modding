@@ -139,44 +139,44 @@ Def I() Chain {
 
 
 Def J() Chain {
-    IncAddr()
     0x4A()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def K() Chain {
-    IncAddr()
     0x4B()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def L() Chain {
-    IncAddr()
     0x4C()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def M() Chain {
-    IncAddr()
     0x4D()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def N() Chain {
-    IncAddr()
     0x4E()
     WriteHeap()
+    IncAddr()
 } End
 
 
 Def O() Chain {
-    IncAddr()
     0x4F()
     WriteHeap()
+    IncAddr()
 } End
 
 
@@ -251,10 +251,193 @@ Def Y() Chain {
 
 
 Def Z() Chain {
-    IncAddr()
     0x5A()
     WriteHeap()
+    IncAddr()
 } End
+
+
+Def a() Chain {
+    0x61()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def b() Chain {
+    0x62()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def c() Chain {
+    0x63()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def d() Chain {
+    0x64()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def e() Chain {
+    0x65()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def f() Chain {
+    0x66()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def g() Chain {
+    0x67()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def h() Chain {
+    0x68()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def i() Chain {
+    0x69()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def j() Chain {
+    0x6A()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def k() Chain {
+    0x6B()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def l() Chain {
+    0x6C()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def m() Chain {
+    0x6D()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def n() Chain {
+    0x6E()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def o() Chain {
+    0x6F()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def p() Chain {
+    0x70()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def q() Chain {
+    0x71()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def r() Chain {
+    0x72()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def s() Chain {
+    0x73()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def t() Chain {
+    0x74()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def u() Chain {
+    0x75()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def v() Chain {
+    0x76()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def w() Chain {
+    0x77()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def x() Chain {
+    0x78()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def y() Chain {
+    0x79()
+    WriteHeap()
+    IncAddr()
+} End
+
+
+Def z() Chain {
+    0x7A()
+    WriteHeap()
+    IncAddr()
+} End
+
 
 Def space() Chain {
     0x20()
@@ -317,40 +500,40 @@ Def cparen() Chain {
 } End
 
 Def asterisk() Chain {
-    IncAddr()
     0x2A()
     WriteHeap()
+    IncAddr()
 } End
 
 Def plus() Chain {
-    IncAddr()
     0x2B()
     WriteHeap()
+    IncAddr()
 } End
 
 Def comma() Chain {
-    IncAddr()
     0x2C()
     WriteHeap()
+    IncAddr()
 } End
 
 Def dash() Chain {
-    IncAddr()
     0x2D()
     WriteHeap()
+    IncAddr()
 } End
 
 Def minus() dash() End
 
 Def period() Chain {
-    IncAddr()
     0x2E()
     WriteHeap()
+    IncAddr()
 } End
 
 Def slash() Chain {
-    IncAddr()
     0x2F()
     WriteHeap()
+    IncAddr()
 } End
 
