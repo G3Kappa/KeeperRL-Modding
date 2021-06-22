@@ -1,5 +1,6 @@
 Def print()
-    CopyFromHL() Addr()
-    ReadHeap() PrintASCII() IncAddr()
+    Chain {
+        ReadHeap() PrintDecimal() IncAddr()
+    }
 End
 
