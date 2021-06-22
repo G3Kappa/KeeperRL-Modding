@@ -1488,8 +1488,8 @@ End
 Def Add()
   Chain {
     Write0("0")
-    Pop("A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7")
-    Pop("B0", "B1", "B2", "B3", "B4", "B5", "B6", "B7")
+    PopBits("A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7")
+    PopBits("B0", "B1", "B2", "B3", "B4", "B5", "B6", "B7")
     AddBits("A0", "B0",  "0", "bit0", "C1")
     AddBits("A1", "B1", "C1", "bit1", "C2")
     AddBits("A2", "B2", "C2", "bit2", "C3")
@@ -1498,7 +1498,6 @@ Def Add()
     AddBits("A5", "B5", "C5", "bit5", "C6")
     AddBits("A5", "B5", "C5", "bit5", "C6")
     AddBits("A7", "B7", "C7", "bit7", "C8")
-    # TODO Set carry flag in F register
     Push()
   }
 End
@@ -1631,7 +1630,9 @@ Def ReadSP()
         Copy("bit6", "__SP6")
         Copy("bit7", "__SP7")
     }
-EndDef Push()
+End
+
+Def Push()
   Chain {
     FirstSuccessful {
       Chain {
@@ -1903,7 +1904,7 @@ EndDef Push()
   }
 End
 
-Def Push(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
+Def PushBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
   Chain {
     Copy(Copy0, "bit0")
     Copy(Copy1, "bit1")
@@ -2189,7 +2190,7 @@ Def Pop()
   }
 End
 
-Def Pop(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
+Def PopBits(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
   Chain {
     Pop()
     Copy("bit0", Copy0)
@@ -2202,6 +2203,7 @@ Def Pop(Copy0, Copy1, Copy2, Copy3, Copy4, Copy5, Copy6, Copy7)
     Copy("bit7", Copy7)
   }
 End
+
 "PUSH_TO_STACK" inherit "GROUND_TORCH"
 {
   name = "push to stack"
@@ -2235,17 +2237,6 @@ End
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
 }
-"STACK_INDEX" inherit "GROUND_TORCH" 
-{ 
-  name = "write stack index"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    StackIndex()
-    Message "Wrote stack index to active memory"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
 "WRITE_1" inherit "GROUND_TORCH" 
 { 
   name = "write 1"
@@ -2257,17 +2248,17 @@ End
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
 }
-"ADD" inherit "GROUND_TORCH" 
-{ 
-  name = "add"
-  viewId = { "electric_torch_off" }
-  usageType = UsageEffect "" Chain {
-    Add()
-    Message "Added 2 items"
-  }
-  canBuildOutsideOfTerritory = true
-  xForgetAfterBuilding = true
-}
+# "ADD" inherit "GROUND_TORCH" 
+# { 
+#   name = "add"
+#   viewId = { "electric_torch_off" }
+#   usageType = UsageEffect "" Chain {
+#     Add()
+#     Message "Added 2 items"
+#   }
+#   canBuildOutsideOfTerritory = true
+#   xForgetAfterBuilding = true
+# }
 "PRINT" inherit "GROUND_TORCH" 
 { 
   name = "print"
