@@ -6,7 +6,7 @@
   tickType = Effect Chain {
     0x00() CopyToHL() RegHL() LhsAddr()
     0xF0() CopyToA() RegA() Rhs()
-    LD()
+    ld()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
