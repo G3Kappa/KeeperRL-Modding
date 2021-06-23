@@ -3266,14 +3266,14 @@ End
   name = "TEST"
   viewId = { "electric_torch_off" }
   usageType = UsageEffect "" Chain {
-    # 0x0e() Addr() chW() che() chl() chc() cho() chm() che() chspace() cht() cho() chspace() chK() che() che() chp() che() chr() chR() chL() chexclamation() chNULL()
-    # 0x00() Addr() chH() che() chl() chl() cho() chcomma() chspace() chW() cho() chr() chl() chd() chexclamation() chNULL()
+    0x0E() Addr() chW() che() chl() chc() cho() chm() che() chspace() cht() cho() chspace() chK() che() che() chp() che() chr() chR() chL() chexclamation() chNULL()
+    0x00() Addr() chH() che() chl() chl() cho() chcomma() chspace() chW() cho() chr() chl() chd() chexclamation() chNULL()
     regHL() Lhs() 0x00() RhsAddr() ld()
-    # regHL() Rhs() push()
-    # print()
-    # regHL() Lhs() () 0x0e() RhsAddr() ld()
-    # regSP() LhsAddr() regHL() Rhs() ex()
-    # print()
+    regHL() Rhs() push()
+    print()
+    regHL() Lhs() 0x0E() RhsAddr() ld()
+    regSP() LhsAddr() regHL() Rhs() ex()
+    print()
   }
   canBuildOutsideOfTerritory = true
   xForgetAfterBuilding = true
